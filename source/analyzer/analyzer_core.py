@@ -1,10 +1,11 @@
-import json
 import os
-import time
+import json
+from typing import List, Literal
+from pydantic import BaseModel, Field
 from openai import OpenAI
+import instructor
 from dotenv import load_dotenv
 from source.analyzer.prompts.analyzer_prompts import SYSTEM_PROMPT
-from source.utils.validation.check_llm_output import is_valid_output
 from source.utils.logger_config import setup_logger
 
 load_dotenv()
@@ -12,45 +13,47 @@ project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(_
 log_file_path = os.path.join(project_root, "data", "analyzer.log")
 logger = setup_logger(log_file_path)
 
-client = OpenAI(
-    api_key=os.environ.get("SECRET_KEY"),
-    base_url="https://api.groq.com/openai/v1"
+
+class AnalysisResponse(BaseModel):
+    intent: str = Field(
+        description="The category of the issue, e.g., 'payment issues', 'technical errors', etc., or 'other'")
+    satisfaction: Literal["satisfied", "neutral", "unsatisfied"] = Field(
+        description="Client's final satisfaction level")
+    quality_score: int = Field(ge=1, le=5, description="Agent's work quality score from 1 to 5")
+    agent_mistakes: List[str] = Field(default_factory=list,
+                                      description="List of agent mistakes (e.g., 'ignored_question'). Empty list if none.")
+
+
+client = instructor.from_openai(
+    OpenAI(
+        api_key=os.environ.get("SECRET_KEY"),
+        base_url="https://api.groq.com/openai/v1"
+    ),
+    mode=instructor.Mode.JSON
 )
 
 
-def analyze_single_chat(chat_messages, max_retries=3):
+def analyze_single_chat(chat_messages):
     chat_text = "\n".join([f"{msg['author']}: {msg['text']}" for msg in chat_messages])
 
-    for attempt in range(max_retries):
-        try:
-            response = client.chat.completions.create(
-                model=os.environ.get("MODEL_NAME"),
-                messages=[
-                    {"role": "system", "content": SYSTEM_PROMPT},
-                    {"role": "user", "content": f"Analyze this chat:\n\n{chat_text}"}
-                ],
-                temperature=0.0,
-                seed=42,
-                response_format={"type": "json_object"}
-            )
+    try:
+        response: AnalysisResponse = client.chat.completions.create(
+            model=os.environ.get("MODEL_NAME"),
+            response_model=AnalysisResponse,
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": f"Analyze this chat:\n\n{chat_text}"}
+            ],
+            temperature=0.0,
+            seed=42,
+            max_retries=3
+        )
 
-            response_text = response.choices[0].message.content
-            data = json.loads(response_text)
+        return response.model_dump()
 
-            if is_valid_output(data):
-                return data
-            else:
-                logger.warning(f"Attempt {attempt + 1}: Data failed logical validation. Retrying...")
-
-        except json.JSONDecodeError:
-            logger.error(f"Attempt {attempt + 1}: Model returned invalid JSON format. Retrying...")
-        except Exception as e:
-            logger.error(f"Attempt {attempt + 1}: API Error - {e}")
-
-        time.sleep(1)
-
-    logger.critical("Failed to get a valid response after all attempts.")
-    return None
+    except Exception as e:
+        logger.error(f"Failed to analyze chat after retries. API/Validation Error: {e}")
+        return None
 
 
 def analyze():
