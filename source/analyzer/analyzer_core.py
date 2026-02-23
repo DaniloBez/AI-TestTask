@@ -4,11 +4,14 @@ import time
 from openai import OpenAI
 from dotenv import load_dotenv
 
-load_dotenv()
-project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from source.analyzer.prompts.analyzer_prompts import SYSTEM_PROMPT
 from source.utils.validation.check_llm_output import is_valid_output
+from source.utils.logger_config import setup_logger
+
+load_dotenv()
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+log_file_path = os.path.join(project_root, "data", "analyzer.log")
+logger = setup_logger(log_file_path)
 
 client = OpenAI(
     api_key=os.environ.get("SECRET_KEY"),
@@ -38,16 +41,16 @@ def analyze_single_chat(chat_messages, max_retries=3):
             if is_valid_output(data):
                 return data
             else:
-                print(f"[Warning] Attempt {attempt + 1}: Data failed logical validation. Retrying...")
+                logger.warning(f"Attempt {attempt + 1}: Data failed logical validation. Retrying...")
 
         except json.JSONDecodeError:
-            print(f"[Error] Attempt {attempt + 1}: Model returned invalid JSON format. Retrying...")
+            logger.error(f"Attempt {attempt + 1}: Model returned invalid JSON format. Retrying...")
         except Exception as e:
-            print(f"[API Error] Attempt {attempt + 1}: {e}")
+            logger.error(f"Attempt {attempt + 1}: API Error - {e}")
 
         time.sleep(1)
 
-    print("[Critical] Failed to get a valid response after all attempts.")
+    logger.critical("Failed to get a valid response after all attempts.")
     return None
 
 
@@ -62,7 +65,7 @@ def analyze():
 
     for item in dataset.get("data", []):
         chat_id = item["id"]
-        print(f"Analyzing chat ID: {chat_id}...")
+        logger.info(f"Analyzing chat ID: {chat_id}...")
 
         analysis_data = analyze_single_chat(item["chat"])
 
@@ -70,11 +73,12 @@ def analyze():
             final_obj = {"id": chat_id}
             final_obj.update(analysis_data)
             results.append(final_obj)
-            print(f"[Success] Chat ID {chat_id} analyzed.")
+            logger.info(f"Chat ID {chat_id} analyzed successfully.")
         else:
             results.append({"id": chat_id, "error": "Failed to analyze"})
+            logger.error(f"Chat ID {chat_id} failed to analyze.")
 
     with open(result_path, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
 
-    print(f"\nDone! Results saved to {result_path}")
+    logger.info(f"Done! Results saved to {result_path}")
