@@ -3,12 +3,11 @@ import os
 import time
 from openai import OpenAI
 from dotenv import load_dotenv
+from source.analyzer.prompts.analyzer_prompts import SYSTEM_PROMPT
+from source.utils.validation.check_llm_output import is_valid_output
 
 load_dotenv()
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from source.analyzer.prompts.analyzer_prompts import SYSTEM_PROMPT
-from source.utils.validation.check_llm_output import is_valid_output
 
 client = OpenAI(
     api_key=os.environ.get("SECRET_KEY"),
