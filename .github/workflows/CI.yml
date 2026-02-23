@@ -23,11 +23,11 @@ jobs:
         run: cp .env.example .env
 
       - name: Build Docker Image
-        run: docker-compose build
+        run: docker compose build
 
       - name: Start and Verify Container
         run: |
-          docker-compose up -d
+          docker compose up -d
 
           sleep 5
 
@@ -35,6 +35,6 @@ jobs:
             echo "Контейнер успішно піднявся і працює у фоні!"
           else
             echo "Помилка: Контейнер впав!"
-            docker-compose logs
+            docker compose logs
             exit 1
           fi
