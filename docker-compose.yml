@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: int20h_ai_test_task
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    command: tail -f /dev/null
+    restart: unless-stopped

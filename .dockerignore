@@ -1,0 +1,16 @@
+.env
+
+.git
+.gitignore
+.idea/
+
+venv/
+env/
+.venv/
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+data/*
+!data/.gitkeep
