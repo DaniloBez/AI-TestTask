@@ -3,7 +3,6 @@ import os
 import time
 from openai import OpenAI
 from dotenv import load_dotenv
-
 from source.analyzer.prompts.analyzer_prompts import SYSTEM_PROMPT
 from source.utils.validation.check_llm_output import is_valid_output
 from source.utils.logger_config import setup_logger
