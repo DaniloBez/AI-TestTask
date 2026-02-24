@@ -55,7 +55,9 @@ def _compare_jsons(expected, actual):
 
         if len(mismatches) > 1:  # more than just id
             results.append(mismatches)
-            logger.info(f"Found {mismatch_counter} mismatches between validation and result")
+
+    if len(results) != 0:
+        logger.info(f"Found {mismatch_counter} mismatches between validation and result")
 
     return results
 
