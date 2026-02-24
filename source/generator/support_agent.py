@@ -105,7 +105,7 @@ class SupportAgent:
         response_type = self.choose_response_type()
         description = response_type.get("description", "")
 
-        self.messages.append({"role": "user", "content": client_message})
+        self.messages.append({"role": "user", "content": client_message, "response_type": None})
 
         conversation_text = ""
         for msg in self.messages:
@@ -146,7 +146,7 @@ class SupportAgent:
         prompt, response_type = self._build_prompt(client_message)
         response_text = self._call_llm(prompt)
 
-        self.messages.append({"role": "assistant", "content": response_text})
+        self.messages.append({"role": "assistant", "content": response_text, "response_type": response_type["name"]})
         return response_text, response_type["name"]
 
     def chat(self):
@@ -159,3 +159,4 @@ class SupportAgent:
 
             reply, response_type = self.generate_next(client_message)
             print(f"{self.name} ({response_type}): {reply}\n")
+
