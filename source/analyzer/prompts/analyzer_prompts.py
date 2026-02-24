@@ -1,6 +1,6 @@
-from source.utils.app_config import VALID_SATISFACTION_LEVELS, MIN_QUALITY_SCORE, MAX_QUALITY_SCORE
+from source.utils.app_config import ValidSatisfactionLevels, MIN_QUALITY_SCORE, MAX_QUALITY_SCORE
 
-satisfaction_levels_str = ", ".join([f'"{lvl}"' for lvl in VALID_SATISFACTION_LEVELS])
+satisfaction_levels_str = ", ".join([f'"{lvl.value}"' for lvl in ValidSatisfactionLevels])
 
 SYSTEM_PROMPT = f"""You are an expert customer support quality analyst.
 Your task is to analyze the provided customer support chat and extract specific metrics.

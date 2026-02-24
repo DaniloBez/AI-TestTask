@@ -1,4 +1,4 @@
-from source.utils.app_config import VALID_SATISFACTION_LEVELS, MIN_QUALITY_SCORE, MAX_QUALITY_SCORE
+from source.utils.app_config import ValidSatisfactionLevels, MIN_QUALITY_SCORE, MAX_QUALITY_SCORE
 
 def is_valid_output(data: dict) -> bool:
     required_keys = {"intent", "satisfaction", "quality_score"}
@@ -10,7 +10,8 @@ def is_valid_output(data: dict) -> bool:
         return False
 
     satisfaction = data.get("satisfaction")
-    if satisfaction not in VALID_SATISFACTION_LEVELS:
+    valid_values = [lvl.value for lvl in ValidSatisfactionLevels]
+    if satisfaction not in valid_values:
         return False
 
     intent = data.get("intent")

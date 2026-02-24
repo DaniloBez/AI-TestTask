@@ -1,13 +1,15 @@
 import os
 import json
 import instructor
-from typing import List, Literal
+from typing import List
 from pydantic import BaseModel, Field
 from openai import OpenAI
 from dotenv import load_dotenv
 from openai.types.chat import ChatCompletionSystemMessageParam, ChatCompletionUserMessageParam
+
 from source.analyzer.prompts.analyzer_prompts import SYSTEM_PROMPT
 from source.utils.logger_config import setup_logger
+from source.utils.app_config import ValidSatisfactionLevels, MIN_QUALITY_SCORE, MAX_QUALITY_SCORE
 
 load_dotenv()
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -18,9 +20,10 @@ logger = setup_logger(log_file_path)
 class AnalysisResponse(BaseModel):
     intent: str = Field(
         description="The category of the issue, e.g., 'payment issues', 'technical errors', etc., or 'other'")
-    satisfaction: Literal["satisfied", "neutral", "unsatisfied"] = Field(
+    satisfaction: ValidSatisfactionLevels = Field(
         description="Client's final satisfaction level")
-    quality_score: int = Field(ge=1, le=5, description="Agent's work quality score from 1 to 5")
+    quality_score: int = Field(ge=MIN_QUALITY_SCORE, le=MAX_QUALITY_SCORE,
+                               description=f"Agent's work quality score from {MIN_QUALITY_SCORE} to {MAX_QUALITY_SCORE}")
     agent_mistakes: List[str] = Field(default_factory=list,
                                       description="List of agent mistakes (e.g., 'ignored_question'). Empty list if none.")
 
