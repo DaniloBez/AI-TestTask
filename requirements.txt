@@ -2,5 +2,6 @@ openai>=1.14.0
 instructor>=1.0.0
 
 pydantic>=2.6.0
+tenacity
 
 python-dotenv>=1.0.1

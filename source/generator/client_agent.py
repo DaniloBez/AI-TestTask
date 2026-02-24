@@ -8,6 +8,7 @@ from pydantic import BaseModel, Field
 import source.generator.prompts.client_agent_prompts as prompts
 import os
 
+from ..utils.api_handlers import retry_on_ratelimit
 from ..utils.app_config import ValidSatisfactionLevels, MIN_QUALITY_SCORE, MAX_QUALITY_SCORE
 
 logger = logging.getLogger(__name__)
@@ -27,7 +28,8 @@ class ClientAgent:
         self.model = os.getenv("MODEL_NAME")
 
         logging.info(f"Initializing ClientAgent. Model: {self.model}")
-        logging.info(f"Personality: {personality} | Situation: {situation}")
+        logging.info(f"Personality: {personality}")
+        logging.info(f"Situation: {situation}")
 
         self.client = instructor.from_openai(
             OpenAI(
@@ -40,16 +42,18 @@ class ClientAgent:
             ChatCompletionSystemMessageParam(role="system", content=prompts.BASIC_PROMPT.format(personality=personality, situation=situation)),
         ]
 
-
-
+    @retry_on_ratelimit
     def generate_next(self, message: str) -> ClientResponse:
         logging.info(f"ClientAgent received message: {message}")
-        self.messages.append(ChatCompletionUserMessageParam(role="user", content=message))
+
+        messages_to_send = self.messages + [
+            ChatCompletionUserMessageParam(role="user", content=message)
+        ]
 
         logging.info("Sending request to LLM...")
         response = self.client.chat.completions.create(
             model=self.model,
-            messages=self.messages,
+            messages=messages_to_send,
             temperature=0.5,
             response_model=ClientResponse
         )
@@ -57,23 +61,26 @@ class ClientAgent:
         logging.info(f"ClientAgent generated response: {response.reply_text} | is_resolved: {response.is_resolved}")
         logging.info(f"Client emotion: {response.emotion}, satisfaction: {response.satisfaction}, assessment of support's work: {response.quality_score}")
 
+        self.messages.append(ChatCompletionUserMessageParam(role="user", content=message))
         self.messages.append(ChatCompletionAssistantMessageParam(role="assistant", content=response.reply_text))
         return response
 
-
-
+    @retry_on_ratelimit
     def generate_quality_score(self) -> int:
         logging.info("Generating overall quality score...")
         logging.info("Sending request to LLM...")
 
-        self.messages.append(ChatCompletionSystemMessageParam(role="system", content=prompts.QUALITY_SCORE_PROMPT))
+        messages_to_send = self.messages + [
+            ChatCompletionSystemMessageParam(role="system", content=prompts.QUALITY_SCORE_PROMPT)
+        ]
 
         response = self.client.chat.completions.create(
             model=self.model,
-            messages=self.messages,
+            messages=messages_to_send,
             temperature=0,
             response_model=OverallQualityResponse
         )
 
         logging.info(f"Client overall quality score: {response.quality_score}")
+        self.messages.append(ChatCompletionSystemMessageParam(role="system", content=prompts.QUALITY_SCORE_PROMPT))
         return response.quality_score
