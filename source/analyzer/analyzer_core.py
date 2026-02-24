@@ -1,10 +1,11 @@
 import os
 import json
+import instructor
 from typing import List, Literal
 from pydantic import BaseModel, Field
 from openai import OpenAI
-import instructor
 from dotenv import load_dotenv
+from openai.types.chat import ChatCompletionSystemMessageParam, ChatCompletionUserMessageParam
 from source.analyzer.prompts.analyzer_prompts import SYSTEM_PROMPT
 from source.utils.logger_config import setup_logger
 
@@ -36,14 +37,16 @@ client = instructor.from_openai(
 def analyze_single_chat(chat_messages):
     chat_text = "\n".join([f"{msg['author']}: {msg['text']}" for msg in chat_messages])
 
+    messages = [
+        ChatCompletionSystemMessageParam(role="system", content=SYSTEM_PROMPT),
+        ChatCompletionUserMessageParam(role="user", content=f"Analyze this chat:\n\n{chat_text}")
+    ]
+
     try:
         response: AnalysisResponse = client.chat.completions.create(
             model=os.environ.get("MODEL_NAME"),
             response_model=AnalysisResponse,
-            messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": f"Analyze this chat:\n\n{chat_text}"}
-            ],
+            messages=messages,
             temperature=0.0,
             seed=42,
             max_retries=3
