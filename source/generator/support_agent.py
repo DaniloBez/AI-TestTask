@@ -1,58 +1,64 @@
 import os
 import random
 import json
-from groq import Groq
 from dotenv import load_dotenv
 
+import logging
+from openai import OpenAI
+from openai.types.chat import (
+    ChatCompletionMessageParam,
+    ChatCompletionAssistantMessageParam,
+    ChatCompletionSystemMessageParam,
+    ChatCompletionUserMessageParam
+)
+import instructor
+from pydantic import BaseModel, Field
 
+logger = logging.getLogger(__name__)
 
+class SupportResponse(BaseModel):
+    reply_text: str = Field(description="The support agent's message")
 
-
-class SupportAgent:
-    def __init__(
-        self,
-        name: str = "SupportAgent",
-        model: str = "openai/gpt-oss-120b",
-        api_key: str = None,
-        env_path: str = None,
-        response_types_file: str = None,
-        prompt_file: str = None
-    ):
-        self.name = name
-        self.model = model
-        self.messages = []
+class SupportAgentData:
+    def __init__(self, env_path: str = None, response_types_file: str = None, prompt_file: str = None):
+        self.env_path = env_path
+        self.response_types_file = response_types_file
+        self.prompt_file = prompt_file
         self.response_types = []
         self.prompt_template = ""
-        
-        api_key = self._load_api_key(api_key, env_path)
-        self._init_client(api_key)
-        self._load_files(response_types_file, prompt_file)
 
-    
-    def _load_api_key(self, api_key: str = None, env_path: str = None) -> str:
-        if api_key:
-            return api_key
+        self._load_env()
+        self._load_files()
 
-        if env_path is None:
-            env_path = os.path.abspath(
+    def _load_env(self):
+        if self.env_path is None:
+            self.env_path = os.path.abspath(
                 os.path.join(os.path.dirname(__file__), "..", "..", ".env")
             )
 
-        if os.path.exists(env_path):
-            load_dotenv(dotenv_path=env_path)
+        if os.path.exists(self.env_path):
+            load_dotenv(dotenv_path=self.env_path)
         else:
-            print(f"WARNING: .env file not found at {env_path}")
+            print(f"WARNING: .env file not found at {self.env_path}")
 
-        key = os.getenv("GROQ_API_KEY")
-        if not key:
-            raise ValueError(f"GROQ_API_KEY not found in environment ({env_path})")
+        self.api_key = os.getenv("GROQ_API_KEY")
+        if not self.api_key:
+            raise ValueError(f"GROQ_API_KEY not found in environment ({self.env_path})")
 
-        return key
-    
-    def _init_client(self, api_key: str):
-        if not api_key:
-            raise ValueError("API key is required to initialize SupportAgent")
-        self.client = Groq(api_key=api_key)
+    def _load_files(self):
+        self.response_types_file = self.response_types_file or self._default_response_types_path()
+        self.prompt_file = self.prompt_file or self._default_prompt_path()
+
+        self._validate_file(self.response_types_file)
+        self._validate_file(self.prompt_file)
+
+        self.load_response_types(self.response_types_file)
+        self.load_prompt_template(self.prompt_file)
+
+    @staticmethod
+    def _validate_file(path: str):
+        if not os.path.exists(path):
+            raise FileNotFoundError(f"File not found: {path}")
 
     def load_response_types(self, filepath: str):
         with open(filepath, "r", encoding="utf-8") as f:
@@ -61,92 +67,98 @@ class SupportAgent:
     def load_prompt_template(self, filepath: str):
         with open(filepath, "r", encoding="utf-8") as f:
             self.prompt_template = f.read()
-    
-    def _load_files(self, response_types_file: str, prompt_file: str):
-        response_types_file = (
-            response_types_file
-            or self._default_response_types_path()
-        )
 
-        prompt_file = (
-            prompt_file
-            or self._default_prompt_path()
-        )
-
-        self._validate_file(response_types_file)
-        self._validate_file(prompt_file)
-
-        self.load_response_types(response_types_file)
-        self.load_prompt_template(prompt_file)
-
-
-    def _get_base_dir(self) -> str:
-        return os.path.dirname(os.path.abspath(__file__))
-
-    def _default_response_types_path(self) -> str:
+    @staticmethod
+    def _default_response_types_path() -> str:
         return os.path.join(os.path.dirname(__file__), "prompts", "support_agent_responses_types.json")
 
-    def _default_prompt_path(self) -> str:
+    @staticmethod
+    def _default_prompt_path() -> str:
         return os.path.join(os.path.dirname(__file__), "prompts", "support_agent_prompt.txt")
 
-    def _validate_file(self, path: str):
-        if not os.path.exists(path):
-            raise FileNotFoundError(f"File not found: {path}")
+
+class SupportAgent:
+
+    def __init__(self, data, name: str = "SupportAgent", model: str = "openai/gpt-oss-120b"):
+        self.name = name
+        self.model = model or os.getenv("MODEL_NAME")
+        self.response_types = data.response_types
+        self.prompt_template = data.prompt_template
+        self.messages: list[ChatCompletionMessageParam] = []
+
+        if not data.api_key:
+            raise ValueError("API key is required to initialize SupportAgent")
+
+        # Initialize OpenAI client via instructor (no mode)
+        self.client = instructor.from_openai(
+            OpenAI(
+                api_key=data.api_key,
+                base_url="https://api.groq.com/openai/v1"
+            ),
+            mode=instructor.Mode.JSON
+        )
+
+        # Add initial system prompt
+        system_prompt = self.prompt_template.format(
+            conversation="",
+            description="Initialize conversation"
+        )
+        self.messages.append(ChatCompletionSystemMessageParam(role="system", content=system_prompt))
 
     def choose_response_type(self) -> dict:
         if not self.response_types:
-            print("WARNING response_types were not imported")
+            logger.warning("response_types not loaded")
             return {"name": "normal", "description": "Gives a correct and helpful answer.", "chance": 1.0}
-
         weights = [r["chance"] for r in self.response_types]
         return random.choices(self.response_types, weights=weights, k=1)[0]
 
-    def _build_prompt(self, client_message: str) -> (list, dict):
+    def _build_prompt(self, client_message: str) -> (str, dict):
         response_type = self.choose_response_type()
         description = response_type.get("description", "")
 
-        self.messages.append({"role": "user", "content": client_message, "response_type": None})
+        self.messages.append({"role": "user", "content": client_message})
 
-        conversation_text = ""
-        for msg in self.messages:
-            role = "User" if msg["role"] == "user" else "Support"
-            conversation_text += f"{role}: {msg['content']}\n"
+        conversation = "\n".join([f"{msg['role']}: {msg['content']}" for msg in self.messages])
 
         full_prompt = self.prompt_template.format(
-            conversation=conversation_text,
+            conversation=conversation,
             description=description
         )
 
         return full_prompt, response_type
 
     def _call_llm(self, prompt: str) -> str:
+
+        clean_messages = self.messages + [
+            ChatCompletionSystemMessageParam(role="system", content=prompt)
+        ]
+
         try:
-            completion = self.client.chat.completions.create(
+            # Instructor wrapper call
+            response = self.client.chat.completions.create(
                 model=self.model,
-                messages=[{"role": "user", "content": prompt}],
-                temperature=0.8,
-                max_completion_tokens=600,
-                top_p=0.9,
-                stream=False
+                messages=clean_messages,
+                temperature=0.5,
+                max_tokens=1600,
+                response_model=SupportResponse
             )
 
-            message = completion.choices[0].message
-
-            if not message.content:
-                print("WARNING: Model returned empty content")
-                return ""
-
-            return message.content.strip()
+            return response.reply_text
 
         except Exception as e:
             print("LLM ERROR:", e)
-            return ""
+            return f"LLM ERROR: {e}"
 
     def generate_next(self, client_message: str) -> (str, str):
         prompt, response_type = self._build_prompt(client_message)
         response_text = self._call_llm(prompt)
 
-        self.messages.append({"role": "assistant", "content": response_text, "response_type": response_type["name"]})
+        self.messages.append({
+            "role": "assistant",
+            "content": response_text,
+           # "response_type": response_type["name"]
+        })
+
         return response_text, response_type["name"]
 
     def chat(self):
@@ -156,7 +168,5 @@ class SupportAgent:
             if client_message.lower() in {"exit", "quit"}:
                 print("Chat ended.")
                 break
-
             reply, response_type = self.generate_next(client_message)
             print(f"{self.name} ({response_type}): {reply}\n")
-
