@@ -10,6 +10,7 @@ from openai.types.chat import ChatCompletionSystemMessageParam, ChatCompletionUs
 from source.analyzer.prompts.analyzer_prompts import SYSTEM_PROMPT
 from source.utils.logger_config import setup_logger
 from source.utils.app_config import ValidSatisfactionLevels, MIN_QUALITY_SCORE, MAX_QUALITY_SCORE
+from source.utils.api_handlers import retry_on_ratelimit
 
 load_dotenv()
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -37,6 +38,7 @@ client = instructor.from_openai(
 )
 
 
+@retry_on_ratelimit
 def analyze_single_chat(chat_messages):
     chat_text = "\n".join([f"{msg['author']}: {msg['text']}" for msg in chat_messages])
 
@@ -45,21 +47,16 @@ def analyze_single_chat(chat_messages):
         ChatCompletionUserMessageParam(role="user", content=f"Analyze this chat:\n\n{chat_text}")
     ]
 
-    try:
-        response: AnalysisResponse = client.chat.completions.create(
-            model=os.environ.get("MODEL_NAME"),
-            response_model=AnalysisResponse,
-            messages=messages,
-            temperature=0.0,
-            seed=42,
-            max_retries=3
-        )
+    response: AnalysisResponse = client.chat.completions.create(
+        model=os.environ.get("MODEL_NAME"),
+        response_model=AnalysisResponse,
+        messages=messages,
+        temperature=0.0,
+        seed=42,
+        max_retries=3
+    )
 
-        return response.model_dump()
-
-    except Exception as e:
-        logger.error(f"Failed to analyze chat after retries. API/Validation Error: {e}")
-        return None
+    return response.model_dump()
 
 
 def analyze():
@@ -75,16 +72,17 @@ def analyze():
         chat_id = item["id"]
         logger.info(f"Analyzing chat ID: {chat_id}...")
 
-        analysis_data = analyze_single_chat(item["chat"])
+        try:
+            analysis_data = analyze_single_chat(item["chat"])
 
-        if analysis_data:
             final_obj = {"id": chat_id}
             final_obj.update(analysis_data)
             results.append(final_obj)
             logger.info(f"Chat ID {chat_id} analyzed successfully.")
-        else:
+
+        except Exception as e:
             results.append({"id": chat_id, "error": "Failed to analyze"})
-            logger.error(f"Chat ID {chat_id} failed to analyze.")
+            logger.error(f"Chat ID {chat_id} failed to analyze after all retries. Error: {e}")
 
     with open(result_path, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
