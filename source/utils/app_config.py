@@ -1,4 +1,10 @@
-# Criteria for evaluating agent performance
-VALID_SATISFACTION_LEVELS = ["satisfied", "neutral", "unsatisfied"]
+from enum import Enum
+
+class ValidSatisfactionLevels(str, Enum):
+    SATISFIED = "satisfied"
+    NEUTRAL = "neutral"
+    UNSATISFIED = "unsatisfied"
+
+
 MIN_QUALITY_SCORE = 1
 MAX_QUALITY_SCORE = 5
