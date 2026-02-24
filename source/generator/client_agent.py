@@ -1,0 +1,79 @@
+import logging
+
+import instructor
+from openai import OpenAI
+from openai.types.chat import ChatCompletionMessageParam, ChatCompletionAssistantMessageParam, ChatCompletionSystemMessageParam, ChatCompletionUserMessageParam
+from pydantic import BaseModel, Field
+
+import source.generator.prompts.client_agent_prompts as prompts
+import os
+
+from ..utils.app_config import ValidSatisfactionLevels, MIN_QUALITY_SCORE, MAX_QUALITY_SCORE
+
+logger = logging.getLogger(__name__)
+
+class ClientResponse(BaseModel):
+    reply_text: str = Field(description="Your message")
+    is_resolved: bool = Field(description="True if you want to end the conversation because you have been helped, or you are angry and do not want to talk anymore")
+    emotion: str = Field(description="Your current emotion, for example: calm, angry, confused")
+    satisfaction: ValidSatisfactionLevels = Field(description="Your current satisfaction level")
+    quality_score: int = Field(description="Your assessment of support's work", ge=MIN_QUALITY_SCORE, le=MAX_QUALITY_SCORE)
+
+class OverallQualityResponse(BaseModel):
+    quality_score: int = Field(description="Your assessment of the overall performance of the support service", ge=MIN_QUALITY_SCORE, le=MAX_QUALITY_SCORE)
+
+class ClientAgent:
+    def __init__(self, situation: str, personality: str):
+        self.model = os.getenv("MODEL_NAME")
+
+        logging.info(f"Initializing ClientAgent. Model: {self.model}")
+        logging.info(f"Personality: {personality} | Situation: {situation}")
+
+        self.client = instructor.from_openai(
+            OpenAI(
+                api_key=os.getenv("SECRET_KEY"),
+                base_url="https://api.groq.com/openai/v1"
+            ),
+            mode=instructor.Mode.JSON
+        )
+        self.messages: list[ChatCompletionMessageParam] = [
+            ChatCompletionSystemMessageParam(role="system", content=prompts.BASIC_PROMPT.format(personality=personality, situation=situation)),
+        ]
+
+
+
+    def generate_next(self, message: str) -> ClientResponse:
+        logging.info(f"ClientAgent received message: {message}")
+        self.messages.append(ChatCompletionUserMessageParam(role="user", content=message))
+
+        logging.info("Sending request to LLM...")
+        response = self.client.chat.completions.create(
+            model=self.model,
+            messages=self.messages,
+            temperature=0.5,
+            response_model=ClientResponse
+        )
+
+        logging.info(f"ClientAgent generated response: {response.reply_text} | is_resolved: {response.is_resolved}")
+        logging.info(f"Client emotion: {response.emotion}, satisfaction: {response.satisfaction}, assessment of support's work: {response.quality_score}")
+
+        self.messages.append(ChatCompletionAssistantMessageParam(role="assistant", content=response.reply_text))
+        return response
+
+
+
+    def generate_quality_score(self) -> int:
+        logging.info("Generating overall quality score...")
+        logging.info("Sending request to LLM...")
+
+        self.messages.append(ChatCompletionSystemMessageParam(role="system", content=prompts.QUALITY_SCORE_PROMPT))
+
+        response = self.client.chat.completions.create(
+            model=self.model,
+            messages=self.messages,
+            temperature=0,
+            response_model=OverallQualityResponse
+        )
+
+        logging.info(f"Client overall quality score: {response.quality_score}")
+        return response.quality_score
