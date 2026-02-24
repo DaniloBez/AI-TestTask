@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout repository
@@ -32,9 +32,9 @@ jobs:
           sleep 5
 
           if [ $(docker inspect -f '{{.State.Running}}' int20h_ai_test_task) = "true" ]; then
-            echo "Контейнер успішно піднявся і працює у фоні!"
+            echo "The container has successfully started and is running in the background!"
           else
-            echo "Помилка: Контейнер впав!"
+            echo "Error: Container crashed!"
             docker compose logs
             exit 1
           fi
