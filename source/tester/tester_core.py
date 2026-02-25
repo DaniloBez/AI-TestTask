@@ -35,7 +35,9 @@ def _compare_jsons(expected, actual):
         # Compare simple fields (no intent for now)
         for field in ["satisfaction", "quality_score"]:
             if exp.get(field) != act.get(field):
-                mismatches[field] = [exp.get(field), act.get(field)]
+                mismatches[field] = {}
+                mismatches[field]["expected"] = exp[field]
+                mismatches[field]["actual"] = act[field]
                 mismatch_counter += 1
 
         # Compare agent_mistakes as unordered lists
@@ -46,10 +48,9 @@ def _compare_jsons(expected, actual):
         unexpected_actual = sorted(list(act_mistakes - exp_mistakes))
 
         if missing_expected or unexpected_actual:
-            mismatches["agent_mistakes"] = [
-                missing_expected,
-                unexpected_actual
-            ]
+            mismatches["agent_mistakes"] = {}
+            mismatches["agent_mistakes"]["missing_expected"] = missing_expected
+            mismatches["agent_mistakes"]["unexpected_actual"] = unexpected_actual
             mismatch_counter += len(missing_expected)
             mismatch_counter += len(unexpected_actual)
 
