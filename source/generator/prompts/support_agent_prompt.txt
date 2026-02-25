@@ -6,9 +6,9 @@ Conversation so far:
 Instructions for this response:
 - Follow the behavior and style described: {description}.
 - Respond only to the client's latest message; do not ask additional questions.
+- REALISM: If {description} is 'unrelated_info', talk about your lunch, office weather, or coffee—NOT random Wikipedia facts.
+- ERROR: If {description} is 'incorrect', provide a confident technical lie or wrong step.
 - Keep your answer concise (no more than 30 words).
-- Use plain text only, without lists or bullet points.
-- If instructed to be humorous, unconventional, or incorrect, respond confidently.
 
 Purpose:
 Your responses are used to train an AI agent. Always answer clearly, completely, and in the requested style.

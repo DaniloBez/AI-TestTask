@@ -14,6 +14,8 @@ from openai.types.chat import (
 import instructor
 from pydantic import BaseModel, Field
 
+from source.utils.api_handlers import retry_on_ratelimit
+
 logger = logging.getLogger(__name__)
 
 class SupportResponse(BaseModel):
@@ -41,9 +43,9 @@ class SupportAgentData:
         else:
             print(f"WARNING: .env file not found at {self.env_path}")
 
-        self.api_key = os.getenv("GROQ_API_KEY")
+        self.api_key = os.getenv("SECRET_KEY")
         if not self.api_key:
-            raise ValueError(f"GROQ_API_KEY not found in environment ({self.env_path})")
+            raise ValueError(f"SECRET_KEY not found in environment ({self.env_path})")
 
     def _load_files(self):
         self.response_types_file = self.response_types_file or self._default_response_types_path()
@@ -89,11 +91,11 @@ class SupportAgent:
         if not data.api_key:
             raise ValueError("API key is required to initialize SupportAgent")
 
-        # Initialize OpenAI client via instructor (no mode)
         self.client = instructor.from_openai(
             OpenAI(
                 api_key=data.api_key,
-                base_url="https://api.groq.com/openai/v1"
+                base_url="https://api.groq.com/openai/v1",
+                max_retries=0
             ),
             mode=instructor.Mode.JSON
         )
@@ -112,13 +114,15 @@ class SupportAgent:
         weights = [r["chance"] for r in self.response_types]
         return random.choices(self.response_types, weights=weights, k=1)[0]
 
-    def _build_prompt(self, client_message: str) -> (str, dict):
+    def _build_prompt(self, client_message: str, current_messages: list) -> (str, dict):
         response_type = self.choose_response_type()
         description = response_type.get("description", "")
 
-        self.messages.append({"role": "user", "content": client_message})
+        temp_context = current_messages + [
+            ChatCompletionUserMessageParam(role="user", content=client_message)
+        ]
 
-        conversation = "\n".join([f"{msg['role']}: {msg['content']}" for msg in self.messages])
+        conversation = "\n".join([f"{msg['role']}: {msg['content']}" for msg in temp_context])
 
         full_prompt = self.prompt_template.format(
             conversation=conversation,
@@ -127,39 +131,41 @@ class SupportAgent:
 
         return full_prompt, response_type
 
-    def _call_llm(self, prompt: str) -> str:
-
+    @retry_on_ratelimit()
+    def _call_llm(self, prompt: str, client_message: str) -> str:
         clean_messages = self.messages + [
+            ChatCompletionUserMessageParam(role="user", content=client_message),
             ChatCompletionSystemMessageParam(role="system", content=prompt)
         ]
 
-        try:
-            # Instructor wrapper call
-            response = self.client.chat.completions.create(
-                model=self.model,
-                messages=clean_messages,
-                temperature=0.5,
-                max_tokens=1600,
-                response_model=SupportResponse
-            )
+        clean_messages = self._trim_messages(clean_messages)
 
-            return response.reply_text
-
-        except Exception as e:
-            print("LLM ERROR:", e)
-            return f"LLM ERROR: {e}"
+        response = self.client.chat.completions.create(
+            model=self.model,
+            messages=clean_messages,
+            temperature=0.5,
+            response_model=SupportResponse,
+            max_retries=0
+        )
+        return response.reply_text
 
     def generate_next(self, client_message: str) -> (str, str):
-        prompt, response_type = self._build_prompt(client_message)
-        response_text = self._call_llm(prompt)
+        prompt, response_type = self._build_prompt(client_message, self.messages)
 
-        self.messages.append({
-            "role": "assistant",
-            "content": response_text,
-           # "response_type": response_type["name"]
-        })
+        response_text = self._call_llm(prompt, client_message)
+
+        self.messages.append(ChatCompletionUserMessageParam(role="user", content=client_message))
+        self.messages.append(ChatCompletionAssistantMessageParam(role="assistant", content=response_text))
 
         return response_text, response_type["name"]
+
+    @staticmethod
+    def _trim_messages(messages: list[ChatCompletionMessageParam], limit: int = 8) -> list[ChatCompletionMessageParam]:
+        if len(messages) > limit:
+            messages = [messages[0]] + messages[-6:]
+            logger.info(f"Context trimmed to stay within token limits.")
+
+        return messages
 
     def chat(self):
         print(f"Hello! I am {self.name}. Type 'exit' to end the chat.\n")
