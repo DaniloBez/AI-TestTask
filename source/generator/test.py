@@ -1,9 +1,8 @@
 from dotenv import load_dotenv
-from support_agent import SupportAgentData, SupportAgent
+from support_agent import SupportAgent
 load_dotenv()
 def main():
-    data = SupportAgentData()
-    agent = SupportAgent(data, name="Bot")
+    agent = SupportAgent(name="Bot")
     agent.chat()
 
 
