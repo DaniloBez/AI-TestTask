@@ -44,10 +44,10 @@ class ClientAgent:
         ]
 
     @staticmethod
-    def _trim_messages(messages: list[ChatCompletionMessageParam], limit: int = 8) -> list[ChatCompletionMessageParam]:
+    def _trim_messages(messages: list[ChatCompletionMessageParam], limit: int = 6) -> list[ChatCompletionMessageParam]:
         if len(messages) > limit:
-            messages = [messages[0]] + messages[-6:]
-            logger.info(f"Context trimmed to stay within token limits.")
+            messages = [messages[0]] + messages[-4:]
+            logger.info("Context trimmed to stay within token limits.")
 
         return messages
 

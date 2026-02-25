@@ -3,7 +3,7 @@ import logging
 import random
 
 from .client_agent import ClientAgent
-from .prompts.client_agent_prompts import *
+from .prompts.client_agent_prompts import PERSONALITIES, SITUATIONS
 from .support_agent import SupportAgent
 
 logger = logging.getLogger(__name__)
@@ -25,12 +25,12 @@ def generate_datasets(n_conversations: int = 5):
             logger.error(f"Skipping conversation #{i} due to error: {e}")
 
     with open("./data/dataset.json", "w", encoding="utf-8") as f:
-        json.dump({"data": all_chats}, f, ensure_ascii=False, indent=4)
+        json.dump({"data": all_chats}, f, ensure_ascii=False, indent=2)
 
     with open("./data/validation.json", "w", encoding="utf-8") as f:
-        json.dump(all_stats, f, ensure_ascii=False, indent=4)
+        json.dump(all_stats, f, ensure_ascii=False, indent=2)
 
-    logger.info(f"Generation complete.")
+    logger.info("Generation complete.")
 
 
 def generate_dataset(conv_id: int) -> tuple[dict, dict]:
