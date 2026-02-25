@@ -23,43 +23,28 @@ logger = logging.getLogger(__name__)
 class SupportResponse(BaseModel):
     reply_text: str = Field(description="The support agent's message")
 
-class SupportAgentData:
-    def __init__(self):
-        self.api_key = os.getenv("GROQ_API_KEY")
-        self.response_types = RESPONSE_TYPES
-        self.prompt_template = SUPPORT_AGENT_PROMPT
-
-        logger.info("SupportAgentData initialized")
-        logger.info(f"Loaded {len(self.response_types)} response types")
-
 class SupportAgent:
-    def __init__(self, data, name: str = "SupportAgent", model: str = "openai/gpt-oss-120b"):
+    def __init__(self, name: str = "SupportAgent", model: str = "openai/gpt-oss-120b"):
         self.name = name
         self.model = model or os.getenv("MODEL_NAME")
-        self.response_types = data.response_types
-        self.prompt_template = data.prompt_template
+        self.api_key = os.getenv("SECRET_KEY")
+        self.response_types = RESPONSE_TYPES
+        self.prompt_template = SUPPORT_AGENT_PROMPT
         self.messages: list[ChatCompletionMessageParam] = []
 
-        if not data.api_key:
-            raise ValueError("API key is required to initialize SupportAgent")
+        if not self.api_key:
+            raise ValueError("SECRET_KEY is required to initialize SupportAgent")
 
         self.client = instructor.from_openai(
-            OpenAI(
-                api_key=data.api_key,
-                base_url="https://api.groq.com/openai/v1"
-            ),
+            OpenAI(api_key=self.api_key, base_url="https://api.groq.com/openai/v1"),
             mode=instructor.Mode.JSON
         )
 
-        system_prompt = self.prompt_template.format(
-            conversation="",
-            description="Initialize conversation"
-        )
+        system_prompt = self.prompt_template.format(conversation="", description="Initialize conversation")
         self.messages.append(ChatCompletionSystemMessageParam(role="system", content=system_prompt))
 
-        logging.info(f"initializing SupportAgent")
-        logging.info(f"Model chosen: {self.model}")
-        logging.info(f"Model name: {self.name}")
+        logger.info(f"SupportAgent initialized: {self.name} using model {self.model}")
+        logger.info(f"Loaded {len(self.response_types)} response types")
 
     def choose_response_type(self) -> dict:
         if not self.response_types:
