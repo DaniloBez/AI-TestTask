@@ -38,7 +38,7 @@ client = instructor.from_openai(
 )
 
 
-@retry_on_ratelimit
+@retry_on_ratelimit()
 def analyze_single_chat(chat_messages):
     chat_text = "\n".join([f"{msg['author']}: {msg['text']}" for msg in chat_messages])
 
