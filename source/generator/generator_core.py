@@ -4,7 +4,7 @@ import random
 
 from .client_agent import ClientAgent
 from .prompts.client_agent_prompts import *
-from .support_agent import SupportAgent, SupportAgentData
+from .support_agent import SupportAgent
 
 logger = logging.getLogger(__name__)
 
@@ -40,8 +40,7 @@ def generate_dataset(conv_id: int) -> tuple[dict, dict]:
 
     client = ClientAgent(situation, personality)
 
-    support_data = SupportAgentData()
-    support = SupportAgent(data=support_data)
+    support = SupportAgent()
 
     chat_history = []
     agent_mistakes = []
