@@ -1,8 +1,7 @@
 import os
 import random
-import json
-
 import logging
+
 from openai import OpenAI
 from openai.types.chat import (
     ChatCompletionMessageParam,
@@ -13,6 +12,8 @@ from pydantic import BaseModel, Field
 
 from source.utils.api_handlers import retry_on_ratelimit
 
+from source.generator.prompts.support_agent_responses_types import RESPONSE_TYPES
+from source.generator.prompts.support_agent_prompt import SUPPORT_AGENT_PROMPT
 logger = logging.getLogger(__name__)
 #logging.basicConfig(
 #    level=logging.INFO,
@@ -23,51 +24,13 @@ class SupportResponse(BaseModel):
     reply_text: str = Field(description="The support agent's message")
 
 class SupportAgentData:
-    def __init__(self, env_path: str = None, response_types_file: str = None, prompt_file: str = None):
-        self.env_path = env_path
-        self.response_types_file = response_types_file
-        self.prompt_file = prompt_file
-        self.response_types = []
-        self.prompt_template = ""
-
+    def __init__(self):
         self.api_key = os.getenv("GROQ_API_KEY")
-        self._load_files()
+        self.response_types = RESPONSE_TYPES
+        self.prompt_template = SUPPORT_AGENT_PROMPT
 
-        logging.info(f"response types: {self.response_types}")
-        logging.info(f"initializing SupportAgentData")
-        logging.info(f"prompt template: {self.prompt_template}")
-
-    def _load_files(self):
-        self.response_types_file = self.response_types_file or self._default_response_types_path()
-        self.prompt_file = self.prompt_file or self._default_prompt_path()
-
-        self._validate_file(self.response_types_file)
-        self._validate_file(self.prompt_file)
-
-        self.load_response_types(self.response_types_file)
-        self.load_prompt_template(self.prompt_file)
-
-    @staticmethod
-    def _validate_file(path: str):
-        if not os.path.exists(path):
-            raise FileNotFoundError(f"File not found: {path}")
-
-    def load_response_types(self, filepath: str):
-        with open(filepath, "r", encoding="utf-8") as f:
-            self.response_types = json.load(f)
-
-    def load_prompt_template(self, filepath: str):
-        with open(filepath, "r", encoding="utf-8") as f:
-            self.prompt_template = f.read()
-
-    @staticmethod
-    def _default_response_types_path() -> str:
-        return os.path.join(os.path.dirname(__file__), "prompts", "support_agent_responses_types.json")
-
-    @staticmethod
-    def _default_prompt_path() -> str:
-        return os.path.join(os.path.dirname(__file__), "prompts", "support_agent_prompt.txt")
-
+        logger.info("SupportAgentData initialized")
+        logger.info(f"Loaded {len(self.response_types)} response types")
 
 class SupportAgent:
     def __init__(self, data, name: str = "SupportAgent", model: str = "openai/gpt-oss-120b"):
