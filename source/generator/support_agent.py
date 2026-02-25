@@ -1,20 +1,23 @@
 import os
 import random
 import json
-from dotenv import load_dotenv
 
 import logging
 from openai import OpenAI
 from openai.types.chat import (
     ChatCompletionMessageParam,
-    ChatCompletionAssistantMessageParam,
     ChatCompletionSystemMessageParam,
-    ChatCompletionUserMessageParam
 )
 import instructor
 from pydantic import BaseModel, Field
 
+from source.utils.api_handlers import retry_on_ratelimit
+
 logger = logging.getLogger(__name__)
+#logging.basicConfig(
+#    level=logging.INFO,
+#    format="%(asctime)s [%(levelname)s] %(message)s"
+#)
 
 class SupportResponse(BaseModel):
     reply_text: str = Field(description="The support agent's message")
@@ -27,23 +30,12 @@ class SupportAgentData:
         self.response_types = []
         self.prompt_template = ""
 
-        self._load_env()
+        self.api_key = os.getenv("GROQ_API_KEY")
         self._load_files()
 
-    def _load_env(self):
-        if self.env_path is None:
-            self.env_path = os.path.abspath(
-                os.path.join(os.path.dirname(__file__), "..", "..", ".env")
-            )
-
-        if os.path.exists(self.env_path):
-            load_dotenv(dotenv_path=self.env_path)
-        else:
-            print(f"WARNING: .env file not found at {self.env_path}")
-
-        self.api_key = os.getenv("GROQ_API_KEY")
-        if not self.api_key:
-            raise ValueError(f"GROQ_API_KEY not found in environment ({self.env_path})")
+        logging.info(f"response types: {self.response_types}")
+        logging.info(f"initializing SupportAgentData")
+        logging.info(f"prompt template: {self.prompt_template}")
 
     def _load_files(self):
         self.response_types_file = self.response_types_file or self._default_response_types_path()
@@ -78,7 +70,6 @@ class SupportAgentData:
 
 
 class SupportAgent:
-
     def __init__(self, data, name: str = "SupportAgent", model: str = "openai/gpt-oss-120b"):
         self.name = name
         self.model = model or os.getenv("MODEL_NAME")
@@ -89,7 +80,6 @@ class SupportAgent:
         if not data.api_key:
             raise ValueError("API key is required to initialize SupportAgent")
 
-        # Initialize OpenAI client via instructor (no mode)
         self.client = instructor.from_openai(
             OpenAI(
                 api_key=data.api_key,
@@ -98,19 +88,24 @@ class SupportAgent:
             mode=instructor.Mode.JSON
         )
 
-        # Add initial system prompt
         system_prompt = self.prompt_template.format(
             conversation="",
             description="Initialize conversation"
         )
         self.messages.append(ChatCompletionSystemMessageParam(role="system", content=system_prompt))
 
+        logging.info(f"initializing SupportAgent")
+        logging.info(f"Model chosen: {self.model}")
+        logging.info(f"Model name: {self.name}")
+
     def choose_response_type(self) -> dict:
         if not self.response_types:
             logger.warning("response_types not loaded")
             return {"name": "normal", "description": "Gives a correct and helpful answer.", "chance": 1.0}
         weights = [r["chance"] for r in self.response_types]
-        return random.choices(self.response_types, weights=weights, k=1)[0]
+        choice = random.choices(self.response_types, weights=weights, k=1)[0]
+        logging.info(f"Support Agent chose the following response style: {choice}")
+        return choice
 
     def _build_prompt(self, client_message: str) -> (str, dict):
         response_type = self.choose_response_type()
@@ -124,7 +119,7 @@ class SupportAgent:
             conversation=conversation,
             description=description
         )
-
+        logging.info(f"Prompt built: {full_prompt}")
         return full_prompt, response_type
 
     def _call_llm(self, prompt: str) -> str:
@@ -132,24 +127,20 @@ class SupportAgent:
         clean_messages = self.messages + [
             ChatCompletionSystemMessageParam(role="system", content=prompt)
         ]
+        logging.info("Sending request to LLM...")
+        response = self.client.chat.completions.create(
+            model=self.model,
+            messages=clean_messages,
+            temperature=0.5,
+            max_tokens=1600,
+            response_model=SupportResponse
+        )
+        logging.info(f"Support Agent answered: {response.reply_text}")
+        return response.reply_text
 
-        try:
-            # Instructor wrapper call
-            response = self.client.chat.completions.create(
-                model=self.model,
-                messages=clean_messages,
-                temperature=0.5,
-                max_tokens=1600,
-                response_model=SupportResponse
-            )
-
-            return response.reply_text
-
-        except Exception as e:
-            print("LLM ERROR:", e)
-            return f"LLM ERROR: {e}"
-
+    @retry_on_ratelimit
     def generate_next(self, client_message: str) -> (str, str):
+        logging.info(f"Support Agent received the following message: {client_message}")
         prompt, response_type = self._build_prompt(client_message)
         response_text = self._call_llm(prompt)
 
