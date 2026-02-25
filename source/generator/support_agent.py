@@ -86,7 +86,7 @@ class SupportAgent:
         logging.info(f"Support Agent answered: {response.reply_text}")
         return response.reply_text
 
-    @retry_on_ratelimit
+    @retry_on_ratelimit()
     def generate_next(self, client_message: str) -> (str, str):
         logging.info(f"Support Agent received the following message: {client_message}")
         prompt, response_type = self._build_prompt(client_message)
