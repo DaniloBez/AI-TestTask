@@ -14,8 +14,8 @@ from source.utils.api_handlers import retry_on_ratelimit
 
 load_dotenv()
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-log_file_path = os.path.join(project_root, "data", "analyzer.log")
-logger = setup_logger(log_file_path)
+log_file_path = os.path.join(project_root, "logs", "analyzer.log")
+logger = setup_logger(log_file_path, "source.analyzer")
 
 
 class AnalysisResponse(BaseModel):
@@ -32,14 +32,23 @@ class AnalysisResponse(BaseModel):
 client = instructor.from_openai(
     OpenAI(
         api_key=os.environ.get("SECRET_KEY"),
-        base_url="https://api.groq.com/openai/v1"
+        base_url=os.environ.get("BASE_URL")
     ),
     mode=instructor.Mode.JSON
 )
 
 
 @retry_on_ratelimit()
-def analyze_single_chat(chat_messages):
+def analyze_single_chat(chat_messages: list) -> dict:
+    """
+    Analyzes a given chat sequence to evaluate agent performance, client intent, and end-user satisfaction.
+
+    Args:
+        chat_messages (list): An iterable series of dictionaries representing chat history occurrences.
+
+    Returns:
+        dict: The analyzed output mapped to the validation metrics structure representation.
+    """
     chat_text = "\n".join([f"{msg['author']}: {msg['text']}" for msg in chat_messages])
 
     messages = [
@@ -59,9 +68,18 @@ def analyze_single_chat(chat_messages):
     return response.model_dump()
 
 
-def analyze():
-    dataset_path = os.path.join(project_root, "data", "dataset.json")
-    result_path = os.path.join(project_root, "data", "result.json")
+def analyze() -> None:
+    """
+    Iterates over a simulated dataset file and evaluates each extracted conversation.
+
+    Reads generated conversation lines from 'output/dataset.json', processes each individually with the analyzer model, 
+    and writes compiled evaluations back to 'output/result.json'. Error instances are captured gracefully on failure.
+
+    Returns:
+        None
+    """
+    dataset_path = os.path.join(project_root, "output", "dataset.json")
+    result_path = os.path.join(project_root, "output", "result.json")
 
     with open(dataset_path, "r", encoding="utf-8") as f:
         dataset = json.load(f)
@@ -84,6 +102,7 @@ def analyze():
             results.append({"id": chat_id, "error": "Failed to analyze"})
             logger.error(f"Chat ID {chat_id} failed to analyze after all retries. Error: {e}")
 
+    os.makedirs(os.path.dirname(result_path), exist_ok=True)
     with open(result_path, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
 

@@ -8,3 +8,5 @@ class ValidSatisfactionLevels(str, Enum):
 
 MIN_QUALITY_SCORE = 1
 MAX_QUALITY_SCORE = 5
+
+TESTS_NUM = 2

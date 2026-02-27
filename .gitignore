@@ -1,7 +1,7 @@
 .env
 
-data/*.json
 *.log
+logs
 
 __pycache__/
 *.py[cod]

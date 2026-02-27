@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1,
+    "intent": "export feature error",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "incorrect_troubleshooting",
+      "unprofessional_tone"
+    ]
+  },
+  {
+    "id": 2,
+    "intent": "upgrade payment failure",
+    "satisfaction": "neutral",
+    "quality_score": 2,
+    "agent_mistakes": [
+      "ignored_context",
+      "irrelevant_troubleshooting"
+    ]
+  },
+  {
+    "id": 3,
+    "intent": "PDF download 500 error",
+    "satisfaction": "satisfied",
+    "quality_score": 4,
+    "agent_mistakes": [
+      "duplicate_message",
+      "inappropriate_canned_response"
+    ]
+  },
+  {
+    "id": 4,
+    "intent": "password reset",
+    "satisfaction": "satisfied",
+    "quality_score": 5,
+    "agent_mistakes": []
+  },
+  {
+    "id": 5,
+    "intent": "forgotten trial refund",
+    "satisfaction": "satisfied",
+    "quality_score": 5,
+    "agent_mistakes": []
+  },
+  {
+    "id": 6,
+    "intent": "upgrade billing inquiry",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "ignored_question",
+      "irrelevant_troubleshooting",
+      "no_resolution"
+    ]
+  },
+  {
+    "id": 7,
+    "intent": "plan upgrade",
+    "satisfaction": "neutral",
+    "quality_score": 2,
+    "agent_mistakes": [
+      "rude_tone",
+      "repetitive_responses",
+      "ignored_question"
+    ]
+  },
+  {
+    "id": 8,
+    "intent": "report export error",
+    "satisfaction": "satisfied",
+    "quality_score": 3,
+    "agent_mistakes": [
+      "repeated_message",
+      "ignored_client_input"
+    ]
+  },
+  {
+    "id": 9,
+    "intent": "report export error",
+    "satisfaction": "satisfied",
+    "quality_score": 3,
+    "agent_mistakes": [
+      "blaming_client",
+      "rude_tone"
+    ]
+  },
+  {
+    "id": 10,
+    "intent": "upgrade pricing clarification",
+    "satisfaction": "satisfied",
+    "quality_score": 5,
+    "agent_mistakes": []
+  },
+  {
+    "id": 11,
+    "intent": "PDF export 500 error",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "irrelevant_troubleshooting",
+      "ignored_context"
+    ]
+  },
+  {
+    "id": 12,
+    "intent": "report save error",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "overly_technical_jargon",
+      "repetitive_responses",
+      "no_resolution"
+    ]
+  },
+  {
+    "id": 13,
+    "intent": "payment failure",
+    "satisfaction": "satisfied",
+    "quality_score": 3,
+    "agent_mistakes": [
+      "repetitive_messages"
+    ]
+  },
+  {
+    "id": 14,
+    "intent": "PDF export 500 error",
+    "satisfaction": "neutral",
+    "quality_score": 3,
+    "agent_mistakes": [
+      "repetitive_responses",
+      "ignored_question"
+    ]
+  },
+  {
+    "id": 15,
+    "intent": "refund request",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "rude_tone",
+      "inconsistent_messaging"
+    ]
+  },
+  {
+    "id": 16,
+    "intent": "subscription upgrade",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "rude_tone",
+      "condescending_language"
+    ]
+  },
+  {
+    "id": 17,
+    "intent": "refund request",
+    "satisfaction": "satisfied",
+    "quality_score": 2,
+    "agent_mistakes": [
+      "contradictory_statements",
+      "repetitive_messages",
+      "irrelevant_question"
+    ]
+  },
+  {
+    "id": 18,
+    "intent": "refund request",
+    "satisfaction": "satisfied",
+    "quality_score": 2,
+    "agent_mistakes": [
+      "incorrect_info",
+      "unnecessary_escalation",
+      "repetitive_responses"
+    ]
+  },
+  {
+    "id": 19,
+    "intent": "export 500 error",
+    "satisfaction": "neutral",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "defensive_tone",
+      "incorrect_troubleshooting",
+      "ignored_provided_information",
+      "repetitive_responses"
+    ]
+  },
+  {
+    "id": 20,
+    "intent": "payment failure",
+    "satisfaction": "neutral",
+    "quality_score": 3,
+    "agent_mistakes": [
+      "inattentive_reading",
+      "unnecessary_question"
+    ]
+  },
+  {
+    "id": 21,
+    "intent": "refund request due to forgotten trial",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "rude_tone",
+      "inappropriate_macro",
+      "lack_of_empathy"
+    ]
+  },
+  {
+    "id": 22,
+    "intent": "payment authorization failure",
+    "satisfaction": "neutral",
+    "quality_score": 3,
+    "agent_mistakes": [
+      "unnecessary_escalation",
+      "poor_communication_flow"
+    ]
+  },
+  {
+    "id": 23,
+    "intent": "account access",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "overly_technical_language",
+      "repetitive_responses",
+      "ignored_user_context",
+      "no_resolution"
+    ]
+  },
+  {
+    "id": 24,
+    "intent": "password reset issue",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "induced_panic",
+      "failed_troubleshooting",
+      "unempathetic_tone",
+      "no_resolution"
+    ]
+  },
+  {
+    "id": 25,
+    "intent": "account lockout",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "excessive_jargon",
+      "no_resolution",
+      "lack_of_empathy"
+    ]
+  },
+  {
+    "id": 26,
+    "intent": "upgrade payment failure",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "repetitive_responses",
+      "no_resolution"
+    ]
+  },
+  {
+    "id": 27,
+    "intent": "password reset email issue",
+    "satisfaction": "unsatisfied",
+    "quality_score": 2,
+    "agent_mistakes": [
+      "scripted_responses",
+      "repetitive_messages",
+      "ignored_technical_details"
+    ]
+  },
+  {
+    "id": 28,
+    "intent": "upgrade proration inquiry",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "ignored_question",
+      "irrelevant_troubleshooting",
+      "repetitive_responses",
+      "unprofessional_tone"
+    ]
+  },
+  {
+    "id": 29,
+    "intent": "password reset issue",
+    "satisfaction": "neutral",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "rude_tone",
+      "repetitive_response"
+    ]
+  },
+  {
+    "id": 30,
+    "intent": "PDF export 500 error",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "ignored_technical_context",
+      "rigid_script_following",
+      "failure_to_escalate"
+    ]
+  },
+  {
+    "id": 31,
+    "intent": "payment failed error",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "refused_assistance",
+      "condescending_tone",
+      "no_resolution"
+    ]
+  },
+  {
+    "id": 32,
+    "intent": "payment authorization error",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "rude_tone",
+      "refusal_to_troubleshoot",
+      "ignored_client_evidence"
+    ]
+  },
+  {
+    "id": 33,
+    "intent": "refund request",
+    "satisfaction": "satisfied",
+    "quality_score": 2,
+    "agent_mistakes": [
+      "rude_tone",
+      "condescending_attitude"
+    ]
+  },
+  {
+    "id": 34,
+    "intent": "report export error",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "rude_tone",
+      "blaming_client",
+      "ignored_question",
+      "inappropriate_response"
+    ]
+  },
+  {
+    "id": 35,
+    "intent": "PDF export 500 error",
+    "satisfaction": "neutral",
+    "quality_score": 3,
+    "agent_mistakes": [
+      "ignored_question",
+      "repeated_message"
+    ]
+  },
+  {
+    "id": 36,
+    "intent": "report download error",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "rude_tone",
+      "unnecessary_escalation",
+      "inconsistent_responses",
+      "no_resolution"
+    ]
+  },
+  {
+    "id": 37,
+    "intent": "payment gateway error",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "ignored_client_information",
+      "repetitive_responses",
+      "incorrect_troubleshooting"
+    ]
+  },
+  {
+    "id": 38,
+    "intent": "plan upgrade billing",
+    "satisfaction": "satisfied",
+    "quality_score": 5,
+    "agent_mistakes": []
+  },
+  {
+    "id": 39,
+    "intent": "refund request",
+    "satisfaction": "satisfied",
+    "quality_score": 2,
+    "agent_mistakes": [
+      "incorrect_initial_info",
+      "repetitive_messages"
+    ]
+  },
+  {
+    "id": 40,
+    "intent": "report export error",
+    "satisfaction": "satisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "rude_tone",
+      "incorrect_info",
+      "repetitive_responses"
+    ]
+  },
+  {
+    "id": 41,
+    "intent": "password reset",
+    "satisfaction": "neutral",
+    "quality_score": 5,
+    "agent_mistakes": []
+  },
+  {
+    "id": 42,
+    "intent": "plan upgrade pricing",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "rude_tone",
+      "repetitive_messages"
+    ]
+  },
+  {
+    "id": 43,
+    "intent": "payment failed",
+    "satisfaction": "satisfied",
+    "quality_score": 3,
+    "agent_mistakes": [
+      "repetitive_macro_use",
+      "ignored_client_statement"
+    ]
+  },
+  {
+    "id": 44,
+    "intent": "payment gateway error",
+    "satisfaction": "unsatisfied",
+    "quality_score": 3,
+    "agent_mistakes": [
+      "irrelevant_troubleshooting_steps",
+      "ignored_client_input"
+    ]
+  },
+  {
+    "id": 45,
+    "intent": "upgrade billing inquiry",
+    "satisfaction": "satisfied",
+    "quality_score": 5,
+    "agent_mistakes": []
+  },
+  {
+    "id": 46,
+    "intent": "PDF export failure",
+    "satisfaction": "neutral",
+    "quality_score": 4,
+    "agent_mistakes": [
+      "ignored_instruction"
+    ]
+  },
+  {
+    "id": 47,
+    "intent": "refund request",
+    "satisfaction": "satisfied",
+    "quality_score": 3,
+    "agent_mistakes": [
+      "repeated_messages",
+      "delayed_answer"
+    ]
+  },
+  {
+    "id": 48,
+    "intent": "password reset issue",
+    "satisfaction": "satisfied",
+    "quality_score": 5,
+    "agent_mistakes": []
+  },
+  {
+    "id": 49,
+    "intent": "report download error",
+    "satisfaction": "satisfied",
+    "quality_score": 5,
+    "agent_mistakes": []
+  },
+  {
+    "id": 50,
+    "intent": "upgrade payment failure",
+    "satisfaction": "unsatisfied",
+    "quality_score": 1,
+    "agent_mistakes": [
+      "repetitive_responses",
+      "poor_troubleshooting",
+      "ignored_context"
+    ]
+  }
+]

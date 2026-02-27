@@ -1,19 +1,31 @@
 import logging
+import os
 from logging import Logger
 
 
-def setup_logger(filename: str) -> Logger:
-    log_filename = filename
+def setup_logger(filename: str, logger_name: str = __name__) -> Logger:
+    """
+    Sets up a configured logger that writes logs to a specified file.
 
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-        handlers=[
-            logging.FileHandler(log_filename, mode="w", encoding="utf-8"),
-        ],
-        force=True
-    )
+    Args:
+        filename (str): The path to the file where logs should be written.
+        logger_name (str, optional): The name of the logger. Defaults to the module name.
 
-    print(f"Logs are written to: {log_filename}")
+    Returns:
+        Logger: A configured standard logging object.
+    """
+    os.makedirs(os.path.dirname(os.path.abspath(filename)), exist_ok=True)
 
-    return logging.getLogger(__name__)
+    logger = logging.getLogger(logger_name)
+    logger.setLevel(logging.INFO)
+
+    if not logger.handlers:
+        file_handler = logging.FileHandler(filename, mode="w", encoding="utf-8")
+        formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+        file_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
+        logger.propagate = False
+
+    print(f"Logs are written to: {filename}")
+
+    return logger

@@ -1,6 +1,7 @@
 import json
 import logging
 import random
+import os
 
 from .client_agent import ClientAgent
 from .prompts.client_agent_prompts import PERSONALITIES, SITUATIONS
@@ -9,7 +10,16 @@ from .support_agent import SupportAgent
 logger = logging.getLogger(__name__)
 
 
-def generate_datasets(n_conversations: int = 5):
+def generate_datasets(n_conversations: int = 5) -> None:
+    """
+    Generates synthetic conversation datasets and validation metadata.
+
+    Args:
+        n_conversations (int, optional): The number of conversations to generate. Defaults to 5.
+
+    Returns:
+        None
+    """
     logger.info(f"Starting generation of {n_conversations} conversations...")
 
     all_chats = []
@@ -24,16 +34,28 @@ def generate_datasets(n_conversations: int = 5):
         except Exception as e:
             logger.error(f"Skipping conversation #{i} due to error: {e}")
 
-    with open("./data/dataset.json", "w", encoding="utf-8") as f:
+    os.makedirs("./output", exist_ok=True)
+    with open("./output/dataset.json", "w", encoding="utf-8") as f:
         json.dump({"data": all_chats}, f, ensure_ascii=False, indent=2)
 
-    with open("./data/validation.json", "w", encoding="utf-8") as f:
+    os.makedirs("./data_temp", exist_ok=True)
+    with open("./data_temp/validation.json", "w", encoding="utf-8") as f:
         json.dump(all_stats, f, ensure_ascii=False, indent=2)
 
     logger.info("Generation complete.")
 
 
 def generate_dataset(conv_id: int) -> tuple[dict, dict]:
+    """
+    Generates a single simulated conversation between a customer and a support agent.
+
+    Args:
+        conv_id (int): The unique identifier for the generated conversation.
+
+    Returns:
+        tuple[dict, dict]: A tuple where the first element is the chat history dictionary, 
+                           and the second element is the associated metadata dictionary.
+    """
     sit_key = random.choice(list(SITUATIONS.keys()))
     situation = SITUATIONS[sit_key]
     personality = random.choice(PERSONALITIES)

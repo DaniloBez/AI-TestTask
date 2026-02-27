@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "satisfaction": {
+      "expected": "neutral",
+      "actual": "unsatisfied"
+    }
+  },
+  {
+    "id": 29,
+    "quality_score": {
+      "expected": 2,
+      "actual": 1
+    }
+  },
+  {
+    "id": 37,
+    "agent_mistakes": {
+      "missing_expected": [],
+      "unexpected_actual": [
+        "ignored_client_information"
+      ]
+    }
+  }
+]
