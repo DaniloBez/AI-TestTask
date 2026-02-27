@@ -66,6 +66,19 @@ def _compare_jsons(expected: list, actual: list) -> list:
                 mismatches[field]["actual"] = act[field]
                 mismatch_counter += 1
 
+        exp_mistakes = set(exp.get("agent_mistakes", []))
+        act_mistakes = set(act.get("agent_mistakes", []))
+
+        missing_expected = sorted(list(exp_mistakes - act_mistakes))
+        unexpected_actual = sorted(list(act_mistakes - exp_mistakes))
+
+        if missing_expected or unexpected_actual:
+            mismatches["agent_mistakes"] = {}
+            mismatches["agent_mistakes"]["missing_expected"] = missing_expected
+            mismatches["agent_mistakes"]["unexpected_actual"] = unexpected_actual
+            mismatch_counter += len(missing_expected)
+            mismatch_counter += len(unexpected_actual)
+
         if len(mismatches) > 1:
             results.append(mismatches)
 
