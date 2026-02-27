@@ -21,7 +21,7 @@ class SupportResponse(BaseModel):
     reply_text: str = Field(description="The support agent's message")
 
 class SupportAgent:
-    def __init__(self, name: str = "SupportAgent", model: str = "openai/gpt-oss-120b"):
+    def __init__(self, name: str = "SupportAgent", model: str = "google/gemini-3.1-pro-preview"):
         self.name = name
         self.model = model or os.getenv("MODEL_NAME")
         self.api_key = os.getenv("SECRET_KEY")
@@ -33,7 +33,7 @@ class SupportAgent:
             raise ValueError("SECRET_KEY is required to initialize SupportAgent")
 
         self.client = instructor.from_openai(
-            OpenAI(api_key=self.api_key, base_url="https://api.groq.com/openai/v1"),
+            OpenAI(api_key=self.api_key, base_url="https://openrouter.ai/api/v1"),
             mode=instructor.Mode.JSON
         )
 
@@ -74,7 +74,7 @@ class SupportAgent:
             ChatCompletionSystemMessageParam(role="system", content=prompt)
         ]
 
-        clean_messages = self._trim_messages(clean_messages)
+        #clean_messages = self._trim_messages(clean_messages)
 
         response = self.client.chat.completions.create(
             model=self.model,

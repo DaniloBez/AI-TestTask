@@ -1,6 +1,5 @@
 .env
 
-data/*.json
 *.log
 
 __pycache__/

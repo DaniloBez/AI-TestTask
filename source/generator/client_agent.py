@@ -34,7 +34,7 @@ class ClientAgent:
         self.client = instructor.from_openai(
             OpenAI(
                 api_key=os.getenv("SECRET_KEY"),
-                base_url="https://api.groq.com/openai/v1",
+                base_url="https://openrouter.ai/api/v1",
                 max_retries=0
             ),
             mode=instructor.Mode.JSON
@@ -59,7 +59,7 @@ class ClientAgent:
             ChatCompletionUserMessageParam(role="user", content=message)
         ]
 
-        messages_to_send = self._trim_messages(messages_to_send)
+        #messages_to_send = self._trim_messages(messages_to_send)
 
         logging.info("Sending request to LLM...")
         response = self.client.chat.completions.create(

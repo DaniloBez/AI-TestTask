@@ -7,4 +7,4 @@ load_dotenv()
 logger = setup_logger("generator.log")
 
 if __name__ == "__main__":
-    generate_datasets(1)
+    generate_datasets(5)
