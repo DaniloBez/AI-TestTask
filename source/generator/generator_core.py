@@ -1,6 +1,7 @@
 import json
 import logging
 import random
+import os
 
 from .client_agent import ClientAgent
 from .prompts.client_agent_prompts import PERSONALITIES, SITUATIONS
@@ -24,10 +25,12 @@ def generate_datasets(n_conversations: int = 5):
         except Exception as e:
             logger.error(f"Skipping conversation #{i} due to error: {e}")
 
-    with open("./data/dataset.json", "w", encoding="utf-8") as f:
+    os.makedirs("./output", exist_ok=True)
+    with open("./output/dataset.json", "w", encoding="utf-8") as f:
         json.dump({"data": all_chats}, f, ensure_ascii=False, indent=2)
 
-    with open("./data/validation.json", "w", encoding="utf-8") as f:
+    os.makedirs("./temp-data", exist_ok=True)
+    with open("./temp-data/validation.json", "w", encoding="utf-8") as f:
         json.dump(all_stats, f, ensure_ascii=False, indent=2)
 
     logger.info("Generation complete.")

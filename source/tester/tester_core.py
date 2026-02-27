@@ -4,8 +4,8 @@ import os
 from source.utils.logger_config import setup_logger
 
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-log_file_path = os.path.join(project_root, "", "tester.log")
-logger = setup_logger(log_file_path)
+log_file_path = os.path.join(project_root, "logs", "tester.log")
+logger = setup_logger(log_file_path, "source.tester")
 iteration=1
 
 def _load_json(path):
@@ -69,13 +69,14 @@ def test_for_mismatch_single():
     ]
     """
 
-    validation_path = os.path.join(project_root, "data", "validation.json")
-    result_path = os.path.join(project_root, "data", "result.json")
+    validation_path = os.path.join(project_root, "temp-data", "validation.json")
+    result_path = os.path.join(project_root, "output", "result.json")
     global iteration
-    mismatch_path = os.path.join(project_root, "data", f"mismatch_{iteration}.json")
+    mismatch_path = os.path.join(project_root, "temp-data", f"mismatch_{iteration}.json")
 
     mismatch_res = _compare_jsons(_load_json(validation_path), _load_json(result_path))
 
+    os.makedirs(os.path.dirname(mismatch_path), exist_ok=True)
     with open(mismatch_path, "w", encoding="utf-8") as f:
         json.dump(mismatch_res, f, indent=2, ensure_ascii=False)
 
@@ -93,7 +94,7 @@ def compare_mismatches():
         False -> at least one file differs
     """
 
-    pattern = os.path.join(project_root, "data", "mismatch_*.json")
+    pattern = os.path.join(project_root, "temp-data", "mismatch_*.json")
     paths = sorted(glob.glob(pattern))
 
     if len(paths) <= 1:

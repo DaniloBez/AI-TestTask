@@ -14,8 +14,8 @@ from source.utils.api_handlers import retry_on_ratelimit
 
 load_dotenv()
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-log_file_path = os.path.join(project_root, "data", "analyzer.log")
-logger = setup_logger(log_file_path)
+log_file_path = os.path.join(project_root, "logs", "analyzer.log")
+logger = setup_logger(log_file_path, "source.analyzer")
 
 
 class AnalysisResponse(BaseModel):
@@ -60,8 +60,8 @@ def analyze_single_chat(chat_messages):
 
 
 def analyze():
-    dataset_path = os.path.join(project_root, "data", "dataset.json")
-    result_path = os.path.join(project_root, "data", "result.json")
+    dataset_path = os.path.join(project_root, "output", "dataset.json")
+    result_path = os.path.join(project_root, "output", "result.json")
 
     with open(dataset_path, "r", encoding="utf-8") as f:
         dataset = json.load(f)
@@ -84,6 +84,7 @@ def analyze():
             results.append({"id": chat_id, "error": "Failed to analyze"})
             logger.error(f"Chat ID {chat_id} failed to analyze after all retries. Error: {e}")
 
+    os.makedirs(os.path.dirname(result_path), exist_ok=True)
     with open(result_path, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
 
