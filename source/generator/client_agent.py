@@ -24,7 +24,14 @@ class OverallQualityResponse(BaseModel):
     quality_score: int = Field(description="Professional evaluation of the agent's response. Did they follow protocol? Were they polite? Or were they robotic/rude?", ge=MIN_QUALITY_SCORE, le=MAX_QUALITY_SCORE)
 
 class ClientAgent:
-    def __init__(self, situation: str, personality: str):
+    def __init__(self, situation: str, personality: str) -> None:
+        """
+        Initializes the simulated customer interacting with the support agent.
+
+        Args:
+            situation (str): The situational context for the client's request.
+            personality (str): The chosen character personality driving the interactions.
+        """
         self.model = os.getenv("MODEL_NAME")
 
         logging.info(f"Initializing ClientAgent. Model: {self.model}")
@@ -45,6 +52,16 @@ class ClientAgent:
 
     @staticmethod
     def _trim_messages(messages: list[ChatCompletionMessageParam], limit: int = 6) -> list[ChatCompletionMessageParam]:
+        """
+        Truncates earlier context messages when exceeding limits, preserving the system prompt.
+
+        Args:
+            messages (list[ChatCompletionMessageParam]): Active list of previous chat events.
+            limit (int, optional): Context boundary threshold to apply limit. Defaults to 6.
+
+        Returns:
+            list[ChatCompletionMessageParam]: Resized list of messages.
+        """
         if len(messages) > limit:
             messages = [messages[0]] + messages[-4:]
             logger.info("Context trimmed to stay within token limits.")
@@ -53,6 +70,15 @@ class ClientAgent:
 
     @retry_on_ratelimit()
     def generate_next(self, message: str) -> ClientResponse:
+        """
+        Requests the client LLM to generate consecutive dialogue behavior based on its system instruction and persona.
+
+        Args:
+            message (str): The latest message received from the support agent.
+
+        Returns:
+            ClientResponse: A structured representation of the client's reply and internal state properties.
+        """
         logging.info(f"ClientAgent received message: {message}")
 
         messages_to_send = self.messages + [

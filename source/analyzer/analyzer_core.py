@@ -39,7 +39,16 @@ client = instructor.from_openai(
 
 
 @retry_on_ratelimit()
-def analyze_single_chat(chat_messages):
+def analyze_single_chat(chat_messages: list) -> dict:
+    """
+    Analyzes a given chat sequence to evaluate agent performance, client intent, and end-user satisfaction.
+
+    Args:
+        chat_messages (list): An iterable series of dictionaries representing chat history occurrences.
+
+    Returns:
+        dict: The analyzed output mapped to the validation metrics structure representation.
+    """
     chat_text = "\n".join([f"{msg['author']}: {msg['text']}" for msg in chat_messages])
 
     messages = [
@@ -59,7 +68,16 @@ def analyze_single_chat(chat_messages):
     return response.model_dump()
 
 
-def analyze():
+def analyze() -> None:
+    """
+    Iterates over a simulated dataset file and evaluates each extracted conversation.
+
+    Reads generated conversation lines from 'output/dataset.json', processes each individually with the analyzer model, 
+    and writes compiled evaluations back to 'output/result.json'. Error instances are captured gracefully on failure.
+
+    Returns:
+        None
+    """
     dataset_path = os.path.join(project_root, "output", "dataset.json")
     result_path = os.path.join(project_root, "output", "result.json")
 
