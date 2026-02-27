@@ -33,7 +33,7 @@ class SupportAgent:
             raise ValueError("SECRET_KEY is required to initialize SupportAgent")
 
         self.client = instructor.from_openai(
-            OpenAI(api_key=self.api_key, base_url="https://openrouter.ai/api/v1"),
+            OpenAI(api_key=self.api_key, base_url=os.getenv("BASE_URL")),
             mode=instructor.Mode.JSON
         )
 

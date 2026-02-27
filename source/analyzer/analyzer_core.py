@@ -32,7 +32,7 @@ class AnalysisResponse(BaseModel):
 client = instructor.from_openai(
     OpenAI(
         api_key=os.environ.get("SECRET_KEY"),
-        base_url="https://openrouter.ai/api/v1"
+        base_url=os.environ.get("BASE_URL")
     ),
     mode=instructor.Mode.JSON
 )

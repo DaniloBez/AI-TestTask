@@ -34,7 +34,7 @@ class ClientAgent:
         self.client = instructor.from_openai(
             OpenAI(
                 api_key=os.getenv("SECRET_KEY"),
-                base_url="https://openrouter.ai/api/v1",
+                base_url=os.getenv("BASE_URL"),
                 max_retries=0
             ),
             mode=instructor.Mode.JSON
