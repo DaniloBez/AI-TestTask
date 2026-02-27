@@ -1,0 +1,2666 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "EXPORT FEATURE IS FREEZING. 500 ERROR. I’VE TRIED DIFFERENT BROWSERS. I NEED THIS FOR A PRESENTATION IN 5 MINUTES. FIX IT OR I’M CANCELING."
+        },
+        {
+          "author": "agent",
+          "text": "Have you tried restarting your computer? Sometimes that refreshes the connection."
+        },
+        {
+          "author": "client",
+          "text": "RESTARTING? FOR A SERVER ERROR? ARE YOU KIDDING ME? WASTE MY TIME AGAIN AND I'M GONE."
+        },
+        {
+          "author": "agent",
+          "text": "Thank you for your patience while I consult with my supervisor."
+        },
+        {
+          "author": "client",
+          "text": "SUPERVISOR? JUST GET IT DONE."
+        },
+        {
+          "author": "agent",
+          "text": "I was just following the list. Let me check... oh, our export server is rebooting. It's back now. Try it."
+        },
+        {
+          "author": "client",
+          "text": "It's working. Unbelievable."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "I'm trying to upgrade to Pro. Your payment gateway is returning a 402 error. It's clearly a failure in your middleware's communication with the merchant bank. No auth hit my end."
+        },
+        {
+          "author": "agent",
+          "text": "I'm sorry for the trouble! Have you tried clearing your cookies and using Incognito mode?"
+        },
+        {
+          "author": "client",
+          "text": "Did you even read my message? It's a 402 code. Cookies have nothing to do with server-to-server payment authorization. Get me a senior tech."
+        },
+        {
+          "author": "agent",
+          "text": "Oh, I see now. It looks like our payment processor is down in your region. It should be back up now, please try again."
+        },
+        {
+          "author": "client",
+          "text": "It worked. You should lead with that instead of the script next time."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hiya! 👋 My dog, Sparky, just learned how to high-five! 🐾 Anyway, I'm trying to get that PDF report for my garden club, but it keeps giving me a 500 error. Is the server feeling grumpy today? lol!"
+        },
+        {
+          "author": "agent",
+          "text": "Give Sparky a high-five from me! 🐾 It looks like the server was just a bit overwhelmed by the size of your report. I've optimized the file on our end for you."
+        },
+        {
+          "author": "client",
+          "text": "Oh! Is it because I added too many photos of my roses? 🌹 They're so pretty but maybe they're too heavy for the internet!"
+        },
+        {
+          "author": "agent",
+          "text": "Just a quick moment while I refresh the system."
+        },
+        {
+          "author": "client",
+          "text": "Refreshing... like a cool glass of lemonade! 🍋"
+        },
+        {
+          "author": "agent",
+          "text": "You're doing great! I'm just pulling up your account details now."
+        },
+        {
+          "author": "client",
+          "text": "Ooh, exciting! Sounds like a plan! 🚀"
+        },
+        {
+          "author": "agent",
+          "text": "Haha, I completely understand! Let me check on that for you."
+        },
+        {
+          "author": "client",
+          "text": "Take your time! No rush at all! 🌻"
+        },
+        {
+          "author": "agent",
+          "text": "Haha, I completely understand! Let me check on that for you."
+        },
+        {
+          "author": "client",
+          "text": "Take your time! No rush at all! 🌻"
+        },
+        {
+          "author": "agent",
+          "text": "The roses are worth it! I've cleared the path, so if you try one more time, it should download instantly."
+        },
+        {
+          "author": "client",
+          "text": "It worked! You're a star! 🌟 Have the best day ever!"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hello... I am trying to find my password... but the little letter in the mail isn't coming... I looked in the spam box like my grandson said... but it's empty..."
+        },
+        {
+          "author": "agent",
+          "text": "Hello! I'm sorry to hear the email is hiding from us. Sometimes, if you have a second email address, it might go there. Do you have another email you use for the family?"
+        },
+        {
+          "author": "client",
+          "text": "Oh... I have the one for my knitting club... let me check that... oh my... there are so many buttons..."
+        },
+        {
+          "author": "agent",
+          "text": "It's okay, just wiggle the mouse a bit to find it."
+        },
+        {
+          "author": "client",
+          "text": "Wiggle... oh, there it is! Goodness me..."
+        },
+        {
+          "author": "agent",
+          "text": "Take your time. Do you see a menu at the top?"
+        },
+        {
+          "author": "client",
+          "text": "A menu... like at a restaurant? Oh, words at the top... yes..."
+        },
+        {
+          "author": "agent",
+          "text": "Great! Now, slowly move your mouse to the right."
+        },
+        {
+          "author": "client",
+          "text": "Moving to the right... oh my, the little arrow disappeared..."
+        },
+        {
+          "author": "agent",
+          "text": "Take your time. Look for a message that says 'Security Reset' or 'Password'. It's like finding a specific key on a big keychain."
+        },
+        {
+          "author": "client",
+          "text": "I see it! It was in the knitting mail! I clicked the blue word and I'm back in! Thank you, you're a very patient soul."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Oh no, I’m so sorry to bother you! 😭 I forgot to cancel my trial and I saw a charge for a whole year! I’m so sorry, I didn't mean to break the billing rules! Please tell me my bank account isn't ruined!"
+        },
+        {
+          "author": "agent",
+          "text": "Please don't worry! You haven't broken any rules. This happens quite often, and I can certainly help you fix it."
+        },
+        {
+          "author": "client",
+          "text": "Are you sure? I don't want to get in trouble. Is my data okay?"
+        },
+        {
+          "author": "agent",
+          "text": "Okay, almost done! Thanks for being so positive."
+        },
+        {
+          "author": "client",
+          "text": "Always! Positivity is key! ✨"
+        },
+        {
+          "author": "agent",
+          "text": "Your data is perfectly safe. I have just processed a full refund for that annual charge. You should see it back in your account in 3-5 days."
+        },
+        {
+          "author": "client",
+          "text": "Oh, thank you so much! You’re a lifesaver! I was so worried! Thank you!"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "IF I UPGRADE TO PRO MID-CYCLE, DO I PAY FULL PRICE OR PRORATED? ANSWER THE QUESTION."
+        },
+        {
+          "author": "agent",
+          "text": "Hello. Upgrading to Pro gives you access to advanced features and more storage space for your team."
+        },
+        {
+          "author": "client",
+          "text": "I KNOW WHAT PRO DOES. I ASKED ABOUT THE BILLING CALCULATION. IS IT PRORATED?"
+        },
+        {
+          "author": "agent",
+          "text": "Thank you for your patience while I consult with my supervisor."
+        },
+        {
+          "author": "client",
+          "text": "SUPERVISOR? JUST GET IT DONE."
+        },
+        {
+          "author": "agent",
+          "text": "Could you please confirm the exact error code you see?"
+        },
+        {
+          "author": "client",
+          "text": "I ALREADY TOLD YOU. ARE YOU EVEN READING MY MESSAGES?"
+        },
+        {
+          "author": "agent",
+          "text": "I understand your frustration. I am running a diagnostic."
+        },
+        {
+          "author": "client",
+          "text": "DIAGNOSTIC? JUST FIX THE ERROR."
+        },
+        {
+          "author": "agent",
+          "text": "Our Pro plan is billed annually at $199. You can find the 'Upgrade' button in your settings menu."
+        },
+        {
+          "author": "client",
+          "text": "YOU ARE A BOT OR COMPLETELY INCOMPETENT. EITHER WAY, YOU’VE WASTED MY TIME. I’M CANCELING EVERYTHING. GOODBYE."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hello dear... I want to upgrade to the 'Pro' plan but I'm afraid I'll lose all my old letters and files... I'm so confused by all these buttons..."
+        },
+        {
+          "author": "agent",
+          "text": "Upgrading doesn't delete data. Just click the blue 'Upgrade' button, then 'Confirm', then enter your card."
+        },
+        {
+          "author": "client",
+          "text": "Wait... which blue button? There are three... and what happens to my files exactly?"
+        },
+        {
+          "author": "agent",
+          "text": "It's okay, just wiggle the mouse a bit to find it."
+        },
+        {
+          "author": "client",
+          "text": "Wiggle... oh, there it is! Goodness me..."
+        },
+        {
+          "author": "agent",
+          "text": "Great! Now, slowly move your mouse to the right."
+        },
+        {
+          "author": "client",
+          "text": "Moving to the right... oh my, the little arrow disappeared..."
+        },
+        {
+          "author": "agent",
+          "text": "It's okay, just wiggle the mouse a bit to find it."
+        },
+        {
+          "author": "client",
+          "text": "Wiggle... oh, there it is! Goodness me..."
+        },
+        {
+          "author": "agent",
+          "text": "Take your time. Do you see a menu at the top?"
+        },
+        {
+          "author": "client",
+          "text": "A menu... like at a restaurant? Oh, words at the top... yes..."
+        },
+        {
+          "author": "agent",
+          "text": "Great! Now, slowly move your mouse to the right."
+        },
+        {
+          "author": "client",
+          "text": "Moving to the right... oh my, the little arrow disappeared..."
+        },
+        {
+          "author": "agent",
+          "text": "I already told you, they won't be deleted. It's the one at the top right."
+        },
+        {
+          "author": "client",
+          "text": "I found it... it's done now. I hope my files are still there..."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Oh my goodness, I tried to export my report and the screen said '500 Internal Error'! Did I delete the company database? I’m so sorry, I’m not very good at this! Please tell me I didn't lose everything!"
+        },
+        {
+          "author": "agent",
+          "text": "Deep breaths! I promise you haven't deleted anything. A '500 error' is just a way of the server saying 'I'm confused,' not 'You broke it.'"
+        },
+        {
+          "author": "client",
+          "text": "Are you sure? I clicked the button twice because I was nervous."
+        },
+        {
+          "author": "agent",
+          "text": "It looks like a potential misconfiguration in the environment variables."
+        },
+        {
+          "author": "client",
+          "text": "Typical. Have you verified the deployment pipeline?"
+        },
+        {
+          "author": "agent",
+          "text": "Running a quick traceroute from our edge nodes."
+        },
+        {
+          "author": "client",
+          "text": "Don't bother, I already told you it's dropping at the load balancer."
+        },
+        {
+          "author": "agent",
+          "text": "Running a quick traceroute from our edge nodes."
+        },
+        {
+          "author": "client",
+          "text": "Don't bother, I already told you it's dropping at the load balancer."
+        },
+        {
+          "author": "agent",
+          "text": "Absolutely sure. I’ve refreshed the connection on my end. If you click it one more time now, it will work perfectly. Your data is 100% safe."
+        },
+        {
+          "author": "client",
+          "text": "Oh, thank heavens. It worked! Thank you for being so patient with me!"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "I'm so sorry to bother you again! 😭 I tried to export my report but it says '500 Error'. Did I do something wrong? I'm so worried I broke the account for my whole team!"
+        },
+        {
+          "author": "agent",
+          "text": "You probably clicked the button too many times and crashed the session. You need to be more careful."
+        },
+        {
+          "author": "client",
+          "text": "Oh no! I'm so sorry! 😭 How can I fix it? I didn't mean to!"
+        },
+        {
+          "author": "agent",
+          "text": "You're doing great! I'm just pulling up your account details now."
+        },
+        {
+          "author": "client",
+          "text": "Ooh, exciting! Sounds like a plan! 🚀"
+        },
+        {
+          "author": "agent",
+          "text": "Just a quick moment while I refresh the system."
+        },
+        {
+          "author": "client",
+          "text": "Refreshing... like a cool glass of lemonade! 🍋"
+        },
+        {
+          "author": "agent",
+          "text": "Haha, I completely understand! Let me check on that for you."
+        },
+        {
+          "author": "client",
+          "text": "Take your time! No rush at all! 🌻"
+        },
+        {
+          "author": "agent",
+          "text": "I've reset it for you. It's working now. Just don't click it rapidly again."
+        },
+        {
+          "author": "client",
+          "text": "Thank you so much for fixing my mistake! I'll be much more careful!"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hello... I want to get the 'Pro' version for my three friends... but I'm halfway through the month... do I have to pay for the whole month again? Everything is so expensive these days..."
+        },
+        {
+          "author": "agent",
+          "text": "I understand. Think of it like a pizza. If you've already eaten half the cheese pizza and you want to add pepperoni now, we only charge you for the pepperoni on the remaining slices!"
+        },
+        {
+          "author": "client",
+          "text": "Oh... that sounds very fair... so I won't pay for the cheese again?"
+        },
+        {
+          "author": "agent",
+          "text": "Take your time. Do you see a menu at the top?"
+        },
+        {
+          "author": "client",
+          "text": "A menu... like at a restaurant? Oh, words at the top... yes..."
+        },
+        {
+          "author": "agent",
+          "text": "It's okay, just wiggle the mouse a bit to find it."
+        },
+        {
+          "author": "client",
+          "text": "Wiggle... oh, there it is! Goodness me..."
+        },
+        {
+          "author": "agent",
+          "text": "You're doing very well. Let me know when you're ready for the next step."
+        },
+        {
+          "author": "client",
+          "text": "Thank you dear... I am trying my best..."
+        },
+        {
+          "author": "agent",
+          "text": "Correct! You only pay for the 'upgrade' for the days left. It’s a very small amount, around $4.00 today."
+        },
+        {
+          "author": "client",
+          "text": "That's wonderful. I'll click the button now. You explain things so clearly."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "I'm hitting a 500 Internal Server Error on PDF exports. TLS logs show malformed payloads. It’s a server-side rendering timeout. Escalate to L3."
+        },
+        {
+          "author": "agent",
+          "text": "I'm sorry to hear that. Have you tried clearing your browser cache or using a different browser like Chrome?"
+        },
+        {
+          "author": "client",
+          "text": "Are you serious? I just mentioned TLS logs and 500 errors. Clearing cookies does not fix a backend timeout. Read my technical notes."
+        },
+        {
+          "author": "agent",
+          "text": "I'm reviewing the stack trace in the backend logs."
+        },
+        {
+          "author": "client",
+          "text": "Make sure to check the database query latency as well."
+        },
+        {
+          "author": "agent",
+          "text": "It looks like a potential misconfiguration in the environment variables."
+        },
+        {
+          "author": "client",
+          "text": "Typical. Have you verified the deployment pipeline?"
+        },
+        {
+          "author": "agent",
+          "text": "I'm escalating this sub-thread to the DevOps on-call."
+        },
+        {
+          "author": "client",
+          "text": "Tell them to check the container orchestration limits."
+        },
+        {
+          "author": "agent",
+          "text": "Sometimes a corrupted cookie can interfere with the session. Please try it so we can rule it out."
+        },
+        {
+          "author": "client",
+          "text": "This is a joke. I'm a senior developer, and you're reading from a script for grandmas. I'm done. Fix your broken API. Disgusting."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hello... my computer says '500 Internal Error' when I try to save my report... I cleared the 'cache' thing like my neighbor said... but it didn't help..."
+        },
+        {
+          "author": "agent",
+          "text": "That is a server-side exception indicating a breakdown in the API's RESTful response. We need to check the JSON payload headers."
+        },
+        {
+          "author": "client",
+          "text": "Oh dear... I don't know what a 'RESTful' or a 'payload' is... can you just help me get my report?"
+        },
+        {
+          "author": "agent",
+          "text": "You're doing very well. Let me know when you're ready for the next step."
+        },
+        {
+          "author": "client",
+          "text": "Thank you dear... I am trying my best..."
+        },
+        {
+          "author": "agent",
+          "text": "You're doing very well. Let me know when you're ready for the next step."
+        },
+        {
+          "author": "client",
+          "text": "Thank you dear... I am trying my best..."
+        },
+        {
+          "author": "agent",
+          "text": "I'll just escalate this to our technical engineering division. They will deal with the backend logs."
+        },
+        {
+          "author": "client",
+          "text": "I just wanted to see my report... I'll wait for the email then..."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hi! 🌸 I just finished baking some blueberry muffins and I'm so excited! 🧁 But my payment for the premium plan keeps failing. My bank says they don't even see it! Maybe the muffins are a distraction? lol!"
+        },
+        {
+          "author": "agent",
+          "text": "You're doing great! I'm just pulling up your account details now."
+        },
+        {
+          "author": "client",
+          "text": "Ooh, exciting! Sounds like a plan! 🚀"
+        },
+        {
+          "author": "agent",
+          "text": "Just a quick moment while I refresh the system."
+        },
+        {
+          "author": "client",
+          "text": "Refreshing... like a cool glass of lemonade! 🍋"
+        },
+        {
+          "author": "agent",
+          "text": "You're doing great! I'm just pulling up your account details now."
+        },
+        {
+          "author": "client",
+          "text": "Ooh, exciting! Sounds like a plan! 🚀"
+        },
+        {
+          "author": "agent",
+          "text": "You're doing great! I'm just pulling up your account details now."
+        },
+        {
+          "author": "client",
+          "text": "Ooh, exciting! Sounds like a plan! 🚀"
+        },
+        {
+          "author": "agent",
+          "text": "Just a quick moment while I refresh the system."
+        },
+        {
+          "author": "client",
+          "text": "Refreshing... like a cool glass of lemonade! 🍋"
+        },
+        {
+          "author": "agent",
+          "text": "Okay, almost done! Thanks for being so positive."
+        },
+        {
+          "author": "client",
+          "text": "Always! Positivity is key! ✨"
+        },
+        {
+          "author": "agent",
+          "text": "Okay, almost done! Thanks for being so positive."
+        },
+        {
+          "author": "client",
+          "text": "Always! Positivity is key! ✨"
+        },
+        {
+          "author": "agent",
+          "text": "Muffins sound delicious! I've looked at the gateway. It looks like the 'CVV' code (the 3 digits on the back) was entered with an extra space. Want to try typing it in one more time carefully?"
+        },
+        {
+          "author": "client",
+          "text": "Oh my gosh! I probably had flour on my fingers! ✋❄️ Let me try again... It worked!! You're a genius! Hope you have a wonderful lunch!"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "I'm hitting a 500 Internal Server Error on the PDF export endpoint. I've already checked the payload and it’s valid JSON. Don't tell me to clear my cache; this is clearly a server-side timeout during the rendering phase. Escalate to L3."
+        },
+        {
+          "author": "agent",
+          "text": "I’ve reviewed the logs for your session. It looks like the HTML-to-PDF engine is choking on a specific CSS grid property in your report. I’m escalating this to our backend team now."
+        },
+        {
+          "author": "client",
+          "text": "Finally, someone who speaks the language. Give them my ticket ID."
+        },
+        {
+          "author": "agent",
+          "text": "It looks like a potential misconfiguration in the environment variables."
+        },
+        {
+          "author": "client",
+          "text": "Typical. Have you verified the deployment pipeline?"
+        },
+        {
+          "author": "agent",
+          "text": "It looks like a potential misconfiguration in the environment variables."
+        },
+        {
+          "author": "client",
+          "text": "Typical. Have you verified the deployment pipeline?"
+        },
+        {
+          "author": "agent",
+          "text": "Running a quick traceroute from our edge nodes."
+        },
+        {
+          "author": "client",
+          "text": "Don't bother, I already told you it's dropping at the load balancer."
+        },
+        {
+          "author": "agent",
+          "text": "I'm reviewing the stack trace in the backend logs."
+        },
+        {
+          "author": "client",
+          "text": "Make sure to check the database query latency as well."
+        },
+        {
+          "author": "agent",
+          "text": "I'm reviewing the stack trace in the backend logs."
+        },
+        {
+          "author": "client",
+          "text": "Make sure to check the database query latency as well."
+        },
+        {
+          "author": "agent",
+          "text": "L3 has acknowledged the bug. They’ve pushed a hotfix to your specific node. Try the export again."
+        },
+        {
+          "author": "client",
+          "text": "Acknowledged. It's working now. Exit chat."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hi! 👋 I forgot to cancel my trial because I was busy painting my porch! 🎨 It's a lovely shade of blue. Can I please get a refund? 💖"
+        },
+        {
+          "author": "agent",
+          "text": "Refunds are against company policy once the charge has been processed. No exceptions."
+        },
+        {
+          "author": "client",
+          "text": "But I haven't used the site at all! 🥺 Surely there's a way to help me out? I'm such a loyal fan of yours!"
+        },
+        {
+          "author": "agent",
+          "text": "You're doing great! I'm just pulling up your account details now."
+        },
+        {
+          "author": "client",
+          "text": "Ooh, exciting! Sounds like a plan! 🚀"
+        },
+        {
+          "author": "agent",
+          "text": "Policy is policy. Please don't ask again."
+        },
+        {
+          "author": "client",
+          "text": "Oh... that makes me so sad. 😢 I thought you guys were nicer. I'll just have to go now. Bye."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hello... I want to get the 'Pro' thing... but I don't want to pay twice... I'm already on the 'Basic' one..."
+        },
+        {
+          "author": "agent",
+          "text": "Listen closely, because I'm going to explain this simply like you're a child. You only pay the difference. Do you understand?"
+        },
+        {
+          "author": "client",
+          "text": "That... that was a bit rude, dear. I'm old, not slow..."
+        },
+        {
+          "author": "agent",
+          "text": "You're doing very well. Let me know when you're ready for the next step."
+        },
+        {
+          "author": "client",
+          "text": "Thank you dear... I am trying my best..."
+        },
+        {
+          "author": "agent",
+          "text": "Take your time. Do you see a menu at the top?"
+        },
+        {
+          "author": "client",
+          "text": "A menu... like at a restaurant? Oh, words at the top... yes..."
+        },
+        {
+          "author": "agent",
+          "text": "Just click the button and the computer does the math for you. It's not that hard."
+        },
+        {
+          "author": "client",
+          "text": "I've clicked it. It's done. I'll be sure to tell my grandson about your attitude."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "I FORGOT TO CANCEL MY TRIAL. YOU CHARGED ME FOR A WHOLE YEAR. I HAVEN'T EVEN USED THIS SINCE DAY ONE. REFUND ME NOW OR I AM LEAVING A 1-STAR REVIEW ON EVERY SITE I FIND."
+        },
+        {
+          "author": "agent",
+          "text": "I completely understand the urgency. I have checked your usage logs and since the account has been inactive, I've gone ahead and processed a full refund for the annual subscription."
+        },
+        {
+          "author": "client",
+          "text": "FINALLY. IS IT DONE? I WANT A CONFIRMATION NUMBER."
+        },
+        {
+          "author": "agent",
+          "text": "Thank you for your patience while I consult with my supervisor."
+        },
+        {
+          "author": "client",
+          "text": "SUPERVISOR? JUST GET IT DONE."
+        },
+        {
+          "author": "agent",
+          "text": "Thank you for your patience while I consult with my supervisor."
+        },
+        {
+          "author": "client",
+          "text": "SUPERVISOR? JUST GET IT DONE."
+        },
+        {
+          "author": "agent",
+          "text": "Could you please confirm the exact error code you see?"
+        },
+        {
+          "author": "client",
+          "text": "I ALREADY TOLD YOU. ARE YOU EVEN READING MY MESSAGES?"
+        },
+        {
+          "author": "agent",
+          "text": "I am looking into the system logs right now, please bear with me."
+        },
+        {
+          "author": "client",
+          "text": "I DON'T WANT TO WAIT. DO YOUR JOB."
+        },
+        {
+          "author": "agent",
+          "text": "I am looking into the system logs right now, please bear with me."
+        },
+        {
+          "author": "client",
+          "text": "I DON'T WANT TO WAIT. DO YOUR JOB."
+        },
+        {
+          "author": "agent",
+          "text": "Yes, it is done. Your confirmation number is REF-88291. You will also receive an email in the next few minutes. Your account is now back to the Free tier."
+        },
+        {
+          "author": "client",
+          "text": "GOOD. THANKS."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "I'm so sorry to bother you! 😭 I forgot to cancel my trial and I was charged $200! I really need this refunded, I'm so worried I won't be able to pay my bills!"
+        },
+        {
+          "author": "agent",
+          "text": "I cannot process refunds here. I am escalating this to our Senior Billing Specialization and Compliance Team for a formal review."
+        },
+        {
+          "author": "client",
+          "text": "Oh no! Is it that serious? Did I do something wrong? Please don't let me lose the money!"
+        },
+        {
+          "author": "agent",
+          "text": "Just a quick moment while I refresh the system."
+        },
+        {
+          "author": "client",
+          "text": "Refreshing... like a cool glass of lemonade! 🍋"
+        },
+        {
+          "author": "agent",
+          "text": "Haha, I completely understand! Let me check on that for you."
+        },
+        {
+          "author": "client",
+          "text": "Take your time! No rush at all! 🌻"
+        },
+        {
+          "author": "agent",
+          "text": "Just a quick moment while I refresh the system."
+        },
+        {
+          "author": "client",
+          "text": "Refreshing... like a cool glass of lemonade! 🍋"
+        },
+        {
+          "author": "agent",
+          "text": "Actually, I just realized I can just click 'Refund' here. It's done now. You'll see it in 5 days."
+        },
+        {
+          "author": "client",
+          "text": "Oh! Thank you! You scared me for a second there!"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "EXPORT IS BROKEN. 500 ERROR. FIX IT."
+        },
+        {
+          "author": "agent",
+          "text": "Hello! I hope you're having a great day! I'd be happy to help with that. Can you tell me what browser you are using?"
+        },
+        {
+          "author": "client",
+          "text": "I DON'T CARE ABOUT YOUR GREETING. I HAVE A MEETING. FIX THE SERVER."
+        },
+        {
+          "author": "agent",
+          "text": "I'm just trying to be polite. I've checked the server and it seems to be fine. Maybe it's your internet?"
+        },
+        {
+          "author": "client",
+          "text": "MY INTERNET IS FINE. DO YOUR JOB."
+        },
+        {
+          "author": "agent",
+          "text": "I understand your frustration. I am running a diagnostic."
+        },
+        {
+          "author": "client",
+          "text": "DIAGNOSTIC? JUST FIX THE ERROR."
+        },
+        {
+          "author": "agent",
+          "text": "Thank you for your patience while I consult with my supervisor."
+        },
+        {
+          "author": "client",
+          "text": "SUPERVISOR? JUST GET IT DONE."
+        },
+        {
+          "author": "agent",
+          "text": "I am looking into the system logs right now, please bear with me."
+        },
+        {
+          "author": "client",
+          "text": "I DON'T WANT TO WAIT. DO YOUR JOB."
+        },
+        {
+          "author": "agent",
+          "text": "Could you please confirm the exact error code you see?"
+        },
+        {
+          "author": "client",
+          "text": "I ALREADY TOLD YOU. ARE YOU EVEN READING MY MESSAGES?"
+        },
+        {
+          "author": "agent",
+          "text": "I understand your frustration. I am running a diagnostic."
+        },
+        {
+          "author": "client",
+          "text": "DIAGNOSTIC? JUST FIX THE ERROR."
+        },
+        {
+          "author": "agent",
+          "text": "Actually, I see it now. There was a lag in the queue. I've cleared it. Try now."
+        },
+        {
+          "author": "client",
+          "text": "Finally. It works."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "I’VE BEEN TRYING TO UPGRADE FOR AN HOUR. PAYMENT FAILED EVERY TIME. MY BANK SAYS YOU AREN'T EVEN TRYING TO CHARGE ME. FIX THIS NOW."
+        },
+        {
+          "author": "agent",
+          "text": "I hear your frustration. I’ve checked your account and noticed a regional block on the gateway. I am manually white-listing your IP address right now."
+        },
+        {
+          "author": "client",
+          "text": "HURRY UP. I don't have all day for this."
+        },
+        {
+          "author": "agent",
+          "text": "Could you please confirm the exact error code you see?"
+        },
+        {
+          "author": "client",
+          "text": "I ALREADY TOLD YOU. ARE YOU EVEN READING MY MESSAGES?"
+        },
+        {
+          "author": "agent",
+          "text": "Done. Please refresh the page and try one more time. It will go through now."
+        },
+        {
+          "author": "client",
+          "text": "Fine, it worked. About time."
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hiya! 🌟 I forgot to cancel my trial because my dog, Sparky, had to go to the vet! 🐾 He's okay now! Can I please get a refund for this big charge? 💖"
+        },
+        {
+          "author": "agent",
+          "text": "Company policy states all sales are final once the trial period ends. We cannot issue a refund."
+        },
+        {
+          "author": "client",
+          "text": "Oh! 😢 But I haven't even used the site! Sparky's vet bill was so expensive, I really need this back. Is there anyone else I can talk to?"
+        },
+        {
+          "author": "agent",
+          "text": "You're doing great! I'm just pulling up your account details now."
+        },
+        {
+          "author": "client",
+          "text": "Ooh, exciting! Sounds like a plan! 🚀"
+        },
+        {
+          "author": "agent",
+          "text": "Just a quick moment while I refresh the system."
+        },
+        {
+          "author": "client",
+          "text": "Refreshing... like a cool glass of lemonade! 🍋"
+        },
+        {
+          "author": "agent",
+          "text": "There is no one else. The system does not allow overrides for 'forgetfulness'. Is there anything else?"
+        },
+        {
+          "author": "client",
+          "text": "That's so cold... 😢 I thought you guys were friendly. I'll just go now. Have a nice day."
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "My bank confirms no auth request reached their servers for my Premium upgrade. This is likely a TLS handshake failure or your gateway provider is filtering my CIDR block. Check the raw logs."
+        },
+        {
+          "author": "agent",
+          "text": "Checking the gateway provider... It appears our processor flagged your IP range due to a high volume of requests from your ISP today. I've whitelisted your account ID manually."
+        },
+        {
+          "author": "client",
+          "text": "Typical. Is the whitelist active globally or just for the session?"
+        },
+        {
+          "author": "agent",
+          "text": "I'm reviewing the stack trace in the backend logs."
+        },
+        {
+          "author": "client",
+          "text": "Make sure to check the database query latency as well."
+        },
+        {
+          "author": "agent",
+          "text": "I'm escalating this sub-thread to the DevOps on-call."
+        },
+        {
+          "author": "client",
+          "text": "Tell them to check the container orchestration limits."
+        },
+        {
+          "author": "agent",
+          "text": "Active globally for your account. You can proceed with the transaction now."
+        },
+        {
+          "author": "client",
+          "text": "Payment went through. Patch your firewall rules. Goodbye."
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hello... I can't get into my account... I tried the 'forgot' button but no letter came... I don't see a 'bin' anywhere..."
+        },
+        {
+          "author": "agent",
+          "text": "Please check your SMTP relay settings or verify if your ISP is blacklisting our domain's IP range."
+        },
+        {
+          "author": "client",
+          "text": "I... I don't know what those words are... I just want to see my photos..."
+        },
+        {
+          "author": "agent",
+          "text": "Take your time. Do you see a menu at the top?"
+        },
+        {
+          "author": "client",
+          "text": "A menu... like at a restaurant? Oh, words at the top... yes..."
+        },
+        {
+          "author": "agent",
+          "text": "Take your time. Do you see a menu at the top?"
+        },
+        {
+          "author": "client",
+          "text": "A menu... like at a restaurant? Oh, words at the top... yes..."
+        },
+        {
+          "author": "agent",
+          "text": "It's okay, just wiggle the mouse a bit to find it."
+        },
+        {
+          "author": "client",
+          "text": "Wiggle... oh, there it is! Goodness me..."
+        },
+        {
+          "author": "agent",
+          "text": "It's okay, just wiggle the mouse a bit to find it."
+        },
+        {
+          "author": "client",
+          "text": "Wiggle... oh, there it is! Goodness me..."
+        },
+        {
+          "author": "agent",
+          "text": "Great! Now, slowly move your mouse to the right."
+        },
+        {
+          "author": "client",
+          "text": "Moving to the right... oh my, the little arrow disappeared..."
+        },
+        {
+          "author": "agent",
+          "text": "Take your time. Do you see a menu at the top?"
+        },
+        {
+          "author": "client",
+          "text": "A menu... like at a restaurant? Oh, words at the top... yes..."
+        },
+        {
+          "author": "agent",
+          "text": "Great! Now, slowly move your mouse to the right."
+        },
+        {
+          "author": "client",
+          "text": "Moving to the right... oh my, the little arrow disappeared..."
+        },
+        {
+          "author": "agent",
+          "text": "It's quite simple, just check your inbound port configurations in your mail client."
+        },
+        {
+          "author": "client",
+          "text": "I'm so confused... I think I'll just wait for my grandson to come over next week. Goodbye..."
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "I'm so sorry! 😭 I can't get my password link and I'm worried I'll lose all my files if I can't log in today! Is my data safe?"
+        },
+        {
+          "author": "agent",
+          "text": "If you don't reset it within the hour, the account might be flagged for security deletion. You need to hurry."
+        },
+        {
+          "author": "client",
+          "text": "WHAT?! 😱 Deletion?! Oh my god, please help me! I didn't get the link! What do I do?!"
+        },
+        {
+          "author": "agent",
+          "text": "I've sent it again. If it doesn't arrive, there's nothing more I can do to save the account."
+        },
+        {
+          "author": "client",
+          "text": "I can't breathe... I'm so panicked... I'll just keep refreshing... Oh god..."
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hello... I can't get into my account... I tried the 'forgot' button but no letter came... I don't see a 'bin' anywhere..."
+        },
+        {
+          "author": "agent",
+          "text": "It sounds like a DNS propagation delay or perhaps your ISP's mail filter is trapping our SMTP handshake. Can you check your MX records?"
+        },
+        {
+          "author": "client",
+          "text": "I... I don't know what those letters mean... I just want to see my family photos..."
+        },
+        {
+          "author": "agent",
+          "text": "Just open your terminal and run a traceroute to our mail server to see where the packet is dropping."
+        },
+        {
+          "author": "client",
+          "text": "I'm so lost... everything you say sounds like a different language. I'll just wait for my grandson... I'm giving up on this. Goodbye."
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "I’VE BEEN TRYING TO UPGRADE FOR AN HOUR. PAYMENT FAILED. BANK SAYS NO ATTEMPT WAS MADE. FIX THIS NOW."
+        },
+        {
+          "author": "agent",
+          "text": "I'm sorry for the trouble. Can you please provide your full name, account email, and the last four digits of the card?"
+        },
+        {
+          "author": "client",
+          "text": "I ALREADY ENTERED ALL THAT IN THE PRE-CHAT FORM. READ THE LOGS AND STOP WASTING MY TIME."
+        },
+        {
+          "author": "agent",
+          "text": "I understand, but for security, I need you to type them again here."
+        },
+        {
+          "author": "client",
+          "text": "UNBELIEVABLE. YOU HAVE 2 MINUTES BEFORE I CANCEL MY WHOLE SERVICE AND GO TO A COMPETITOR."
+        },
+        {
+          "author": "agent",
+          "text": "I am looking into the system logs right now, please bear with me."
+        },
+        {
+          "author": "client",
+          "text": "I DON'T WANT TO WAIT. DO YOUR JOB."
+        },
+        {
+          "author": "agent",
+          "text": "I understand your frustration. I am running a diagnostic."
+        },
+        {
+          "author": "client",
+          "text": "DIAGNOSTIC? JUST FIX THE ERROR."
+        },
+        {
+          "author": "agent",
+          "text": "I understand your frustration. I am running a diagnostic."
+        },
+        {
+          "author": "client",
+          "text": "DIAGNOSTIC? JUST FIX THE ERROR."
+        },
+        {
+          "author": "agent",
+          "text": "Thank you for your patience while I consult with my supervisor."
+        },
+        {
+          "author": "client",
+          "text": "SUPERVISOR? JUST GET IT DONE."
+        },
+        {
+          "author": "agent",
+          "text": "I understand your frustration. I am running a diagnostic."
+        },
+        {
+          "author": "client",
+          "text": "DIAGNOSTIC? JUST FIX THE ERROR."
+        },
+        {
+          "author": "agent",
+          "text": "Could you please confirm the exact error code you see?"
+        },
+        {
+          "author": "client",
+          "text": "I ALREADY TOLD YOU. ARE YOU EVEN READING MY MESSAGES?"
+        },
+        {
+          "author": "agent",
+          "text": "I'm still waiting for that information to proceed with troubleshooting."
+        },
+        {
+          "author": "client",
+          "text": "FORGET IT. YOUR SERVICE IS GARBAGE. I'M LEAVING A 1-STAR REVIEW RIGHT NOW. GOODBYE."
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "My password reset link isn't arriving. I've checked the mail logs on my server—the SMTP handshake isn't even initiating from your domain. Your outbound mailer is likely blacklisted or down."
+        },
+        {
+          "author": "agent",
+          "text": "Please check your Junk folder and ensure your internet connection is stable."
+        },
+        {
+          "author": "client",
+          "text": "My internet is stable enough to run a traceroute that shows your mail server is timing out. Stop the scripted replies and fix the relay."
+        },
+        {
+          "author": "agent",
+          "text": "Could you please refresh the page?"
+        },
+        {
+          "author": "client",
+          "text": "Just refreshed it. Still the same."
+        },
+        {
+          "author": "agent",
+          "text": "Could you please refresh the page?"
+        },
+        {
+          "author": "client",
+          "text": "Just refreshed it. Still the same."
+        },
+        {
+          "author": "agent",
+          "text": "Thank you. I am looking into your account now."
+        },
+        {
+          "author": "client",
+          "text": "Please let me know if you need any other details."
+        },
+        {
+          "author": "agent",
+          "text": "I appreciate your patience."
+        },
+        {
+          "author": "client",
+          "text": "No problem."
+        },
+        {
+          "author": "agent",
+          "text": "Thank you. I am looking into your account now."
+        },
+        {
+          "author": "client",
+          "text": "Please let me know if you need any other details."
+        },
+        {
+          "author": "agent",
+          "text": "I appreciate your patience."
+        },
+        {
+          "author": "client",
+          "text": "No problem."
+        },
+        {
+          "author": "agent",
+          "text": "Our engineers just confirmed the mail relay was stuck. It's cleared now. You should see the email."
+        },
+        {
+          "author": "client",
+          "text": "Email received. Next time, trust the technical data I provide."
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "I’M ADDING 3 USERS TO BASIC. IF I UPGRADE TO PRO MID-CYCLE, DO I PAY FULL PRICE OR PRORATED? ANSWER NOW."
+        },
+        {
+          "author": "agent",
+          "text": "Hello. You need to go to the billing tab and click upgrade. It will show you the price there."
+        },
+        {
+          "author": "client",
+          "text": "I KNOW WHERE THE BUTTON IS. I ASKED ABOUT PRORATION. ARE YOU LITERALLY IGNORING MY QUESTION?"
+        },
+        {
+          "author": "agent",
+          "text": "I am looking into the system logs right now, please bear with me."
+        },
+        {
+          "author": "client",
+          "text": "I DON'T WANT TO WAIT. DO YOUR JOB."
+        },
+        {
+          "author": "agent",
+          "text": "I understand your frustration. I am running a diagnostic."
+        },
+        {
+          "author": "client",
+          "text": "DIAGNOSTIC? JUST FIX THE ERROR."
+        },
+        {
+          "author": "agent",
+          "text": "I understand your frustration. I am running a diagnostic."
+        },
+        {
+          "author": "client",
+          "text": "DIAGNOSTIC? JUST FIX THE ERROR."
+        },
+        {
+          "author": "agent",
+          "text": "I am looking into the system logs right now, please bear with me."
+        },
+        {
+          "author": "client",
+          "text": "I DON'T WANT TO WAIT. DO YOUR JOB."
+        },
+        {
+          "author": "agent",
+          "text": "Could you please confirm the exact error code you see?"
+        },
+        {
+          "author": "client",
+          "text": "I ALREADY TOLD YOU. ARE YOU EVEN READING MY MESSAGES?"
+        },
+        {
+          "author": "agent",
+          "text": "I am looking into the system logs right now, please bear with me."
+        },
+        {
+          "author": "client",
+          "text": "I DON'T WANT TO WAIT. DO YOUR JOB."
+        },
+        {
+          "author": "agent",
+          "text": "There is no need to be rude. Yes, it is prorated. You will be charged the difference today."
+        },
+        {
+          "author": "client",
+          "text": "THANKS FOR FINALLY ANSWERING. WORK ON YOUR ATTITUDE."
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hiya! 🌟 My little hamster, Pickles, is running on his wheel so fast today! 🐹 Anyway, I can't get my password reset link. I've checked everywhere! Is the mailman on vacation? lol!"
+        },
+        {
+          "author": "agent",
+          "text": "I don't need to know about your pets. Did you check your spam folder or not?"
+        },
+        {
+          "author": "client",
+          "text": "Oh! 😲 Yes, I checked... I just thought I'd share a smile. It's not in spam."
+        },
+        {
+          "author": "agent",
+          "text": "You're doing great! I'm just pulling up your account details now."
+        },
+        {
+          "author": "client",
+          "text": "Ooh, exciting! Sounds like a plan! 🚀"
+        },
+        {
+          "author": "agent",
+          "text": "Haha, I completely understand! Let me check on that for you."
+        },
+        {
+          "author": "client",
+          "text": "Take your time! No rush at all! 🌻"
+        },
+        {
+          "author": "agent",
+          "text": "Haha, I completely understand! Let me check on that for you."
+        },
+        {
+          "author": "client",
+          "text": "Take your time! No rush at all! 🌻"
+        },
+        {
+          "author": "agent",
+          "text": "Fine. I'm resending it now. Check again."
+        },
+        {
+          "author": "client",
+          "text": "Got it now. Thanks."
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "I'm hitting a 500 error on the PDF export. TLS logs show malformed payloads. It's clearly a server-side timeout. Get me an L3 dev."
+        },
+        {
+          "author": "agent",
+          "text": "I'm sorry! Have you tried using a different browser? We recommend Chrome for the best experience."
+        },
+        {
+          "author": "client",
+          "text": "I am literally looking at the stack trace in the console. This is not a browser issue. Do not give me the 'restart' spiel."
+        },
+        {
+          "author": "agent",
+          "text": "Before I can escalate, I need you to confirm you have updated your browser to the latest version."
+        },
+        {
+          "author": "client",
+          "text": "Unbelievable. You are ignoring every technical data point I provide. I'm not wasting my breath on a script. Fix your API or don't. I'm done."
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hello... I want to give you more money for the 'Premium' thing... but the red box says 'Payment Failed'... I don't know why..."
+        },
+        {
+          "author": "agent",
+          "text": "Here is the direct link to our payment troubleshooting documentation: [link]. Please follow all 15 steps listed there."
+        },
+        {
+          "author": "client",
+          "text": "Oh... I don't know how to use links... and 15 steps is so many... can you just tell me what to do?"
+        },
+        {
+          "author": "agent",
+          "text": "Take your time. Do you see a menu at the top?"
+        },
+        {
+          "author": "client",
+          "text": "A menu... like at a restaurant? Oh, words at the top... yes..."
+        },
+        {
+          "author": "agent",
+          "text": "Take your time. Do you see a menu at the top?"
+        },
+        {
+          "author": "client",
+          "text": "A menu... like at a restaurant? Oh, words at the top... yes..."
+        },
+        {
+          "author": "agent",
+          "text": "It's okay, just wiggle the mouse a bit to find it."
+        },
+        {
+          "author": "client",
+          "text": "Wiggle... oh, there it is! Goodness me..."
+        },
+        {
+          "author": "agent",
+          "text": "Everything you need is in the link. If you can't follow the instructions, I can't assist you further."
+        },
+        {
+          "author": "client",
+          "text": "Oh dear... I'm so sorry to be a bother... I'll just leave it then... Goodbye..."
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "My bank says no auth attempt was made for this upgrade. Check your middleware logs, specifically the handoff to the Stripe API."
+        },
+        {
+          "author": "agent",
+          "text": "Our system is working perfectly. The issue is definitely with your bank. Please call them again."
+        },
+        {
+          "author": "client",
+          "text": "I am looking at my bank's dev portal right now. There is zero incoming traffic from your merchant ID. The bug is on your side."
+        },
+        {
+          "author": "agent",
+          "text": "I cannot help you if you won't accept that your card is the problem."
+        },
+        {
+          "author": "client",
+          "text": "I'm not going to argue with a wall. I'm moving my team to your competitor this afternoon. Cancel my trial."
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "I'm so sorry to bother you! 😭 I forgot to cancel my trial and I was charged for the year! I need that money for my car payment, I'm so scared!"
+        },
+        {
+          "author": "agent",
+          "text": "You should have read the trial terms. It clearly states you will be charged if you don't cancel before day seven."
+        },
+        {
+          "author": "client",
+          "text": "I know, it's my fault! I'm so clumsy! 😭 Is there really nothing you can do? I haven't even logged in since last week!"
+        },
+        {
+          "author": "agent",
+          "text": "Just a quick moment while I refresh the system."
+        },
+        {
+          "author": "client",
+          "text": "Refreshing... like a cool glass of lemonade! 🍋"
+        },
+        {
+          "author": "agent",
+          "text": "Okay, almost done! Thanks for being so positive."
+        },
+        {
+          "author": "client",
+          "text": "Always! Positivity is key! ✨"
+        },
+        {
+          "author": "agent",
+          "text": "You're doing great! I'm just pulling up your account details now."
+        },
+        {
+          "author": "client",
+          "text": "Ooh, exciting! Sounds like a plan! 🚀"
+        },
+        {
+          "author": "agent",
+          "text": "Fine. I'll make an exception this time, but pay attention to your emails next time. Refund processed."
+        },
+        {
+          "author": "client",
+          "text": "Oh, thank you! I'm so sorry for the trouble! You're a lifesaver even if you're a bit scary!"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Oh no, I tried to export my report and everything turned white! 😭 Did I break the whole database? Please tell me I didn't lose my data!"
+        },
+        {
+          "author": "agent",
+          "text": "It looks like you corrupted the file by clicking the button too many times. This is why we have warnings."
+        },
+        {
+          "author": "client",
+          "text": "I'm so sorry! 😭 Is my data gone forever? Am I in trouble? Please help me!"
+        },
+        {
+          "author": "agent",
+          "text": "Okay, almost done! Thanks for being so positive."
+        },
+        {
+          "author": "client",
+          "text": "Always! Positivity is key! ✨"
+        },
+        {
+          "author": "agent",
+          "text": "I'll have to escalate this to see if anything is salvageable. You really shouldn't have done that."
+        },
+        {
+          "author": "client",
+          "text": "I'm so scared... I can't even talk right now... I'll just wait for an email... I'm so sorry..."
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "I'm seeing 500 errors on the PDF export. I've already sniffed the traffic and it looks like a timeout on the downstream rendering microservice. I've cleared cache and tried three different browsers. Escalate this to L3 immediately."
+        },
+        {
+          "author": "agent",
+          "text": "You're spot on. Our rendering engine is struggling with the high-resolution images in your specific report. I'm escalating this to the Dev Ops team to increase the timeout threshold for your UID."
+        },
+        {
+          "author": "client",
+          "text": "Took you long enough to see the obvious. Is the ticket open?"
+        },
+        {
+          "author": "agent",
+          "text": "Running a quick traceroute from our edge nodes."
+        },
+        {
+          "author": "client",
+          "text": "Don't bother, I already told you it's dropping at the load balancer."
+        },
+        {
+          "author": "agent",
+          "text": "Running a quick traceroute from our edge nodes."
+        },
+        {
+          "author": "client",
+          "text": "Don't bother, I already told you it's dropping at the load balancer."
+        },
+        {
+          "author": "agent",
+          "text": "It looks like a potential misconfiguration in the environment variables."
+        },
+        {
+          "author": "client",
+          "text": "Typical. Have you verified the deployment pipeline?"
+        },
+        {
+          "author": "agent",
+          "text": "Ticket L3-992 is active. The fix is deployed. Please re-run the export script."
+        },
+        {
+          "author": "client",
+          "text": "Export successful. Payload looks intact. Closing the loop now."
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hiya! ☀️ My parrot, Polly, just learned to say 'Hello!' 🦜 Anyway, my report won't download. It says '500 Error'. Is the internet broken? lol!"
+        },
+        {
+          "author": "agent",
+          "text": "I don't have time for stories. I'm escalating this to the technical team. They will contact you in 3-5 business days."
+        },
+        {
+          "author": "client",
+          "text": "Oh! 😲 3-5 days? But I need it for my club tomorrow! Is there anything else we can try? Maybe a magic trick? ✨"
+        },
+        {
+          "author": "agent",
+          "text": "Haha, I completely understand! Let me check on that for you."
+        },
+        {
+          "author": "client",
+          "text": "Take your time! No rush at all! 🌻"
+        },
+        {
+          "author": "agent",
+          "text": "No. The ticket is created. Don't reply further or it will move to the back of the queue."
+        },
+        {
+          "author": "client",
+          "text": "Oh... okay. I didn't mean to be a nuisance. I'll just wait then. Sorry."
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Payment gateway 402 error. Bank confirms no hit on their auth servers. Middleware is likely dropping packets. Check your logs."
+        },
+        {
+          "author": "agent",
+          "text": "I've checked our status page and everything is green. Please contact your bank to see why they are blocking the charge."
+        },
+        {
+          "author": "client",
+          "text": "I just said the bank sees NO hit. That means it isn't reaching them. It is YOUR side. Check the raw logs, not a status page."
+        },
+        {
+          "author": "agent",
+          "text": "I'm escalating this sub-thread to the DevOps on-call."
+        },
+        {
+          "author": "client",
+          "text": "Tell them to check the container orchestration limits."
+        },
+        {
+          "author": "agent",
+          "text": "Running a quick traceroute from our edge nodes."
+        },
+        {
+          "author": "client",
+          "text": "Don't bother, I already told you it's dropping at the load balancer."
+        },
+        {
+          "author": "agent",
+          "text": "Running a quick traceroute from our edge nodes."
+        },
+        {
+          "author": "client",
+          "text": "Don't bother, I already told you it's dropping at the load balancer."
+        },
+        {
+          "author": "agent",
+          "text": "Running a quick traceroute from our edge nodes."
+        },
+        {
+          "author": "client",
+          "text": "Don't bother, I already told you it's dropping at the load balancer."
+        },
+        {
+          "author": "agent",
+          "text": "I'm reviewing the stack trace in the backend logs."
+        },
+        {
+          "author": "client",
+          "text": "Make sure to check the database query latency as well."
+        },
+        {
+          "author": "agent",
+          "text": "I'm reviewing the stack trace in the backend logs."
+        },
+        {
+          "author": "client",
+          "text": "Make sure to check the database query latency as well."
+        },
+        {
+          "author": "agent",
+          "text": "If our status page is green, the issue is local to your payment method. Please use a different card."
+        },
+        {
+          "author": "client",
+          "text": "You are literally ignoring logic. I'm moving to a competitor. This service is a joke."
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hiya! 🌟 My cat, Barnaby, just walked across my keyboard and I realized I need to add more people to my team! We're growing so fast! If I upgrade to 'Pro' today, do I pay the whole thing? It's sunny here, hope it's sunny for you too! ☀️"
+        },
+        {
+          "author": "agent",
+          "text": "Hi! Tell Barnaby he has great timing! Since you’re mid-cycle, we only charge you for the remaining days of the month. It’s called 'prorating.'"
+        },
+        {
+          "author": "client",
+          "text": "Prorating! What a fancy word! It's like only paying for the half of the sandwich I actually ate, right? 🥪"
+        },
+        {
+          "author": "agent",
+          "text": "Exactly! You’ll see a credit for your Basic plan and a charge for the Pro plan for the next 12 days."
+        },
+        {
+          "author": "client",
+          "text": "You are a rockstar! Thanks a bunch! Have a sparkly day! ✨"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hi! ☀️ I just saw a charge for a full year after my trial ended! 😱 I'm so sorry, I totally forgot to cancel! Could you help me get a refund? Hope your day is going great! 🌸"
+        },
+        {
+          "author": "agent",
+          "text": "Annual subscriptions are non-refundable according to our Terms of Service."
+        },
+        {
+          "author": "client",
+          "text": "Oh no! Really? 😢 But I haven't used it at all since the first day! Is there any way you can help a friend out?"
+        },
+        {
+          "author": "agent",
+          "text": "Just a quick moment while I refresh the system."
+        },
+        {
+          "author": "client",
+          "text": "Refreshing... like a cool glass of lemonade! 🍋"
+        },
+        {
+          "author": "agent",
+          "text": "Haha, I completely understand! Let me check on that for you."
+        },
+        {
+          "author": "client",
+          "text": "Take your time! No rush at all! 🌻"
+        },
+        {
+          "author": "agent",
+          "text": "You're doing great! I'm just pulling up your account details now."
+        },
+        {
+          "author": "client",
+          "text": "Ooh, exciting! Sounds like a plan! 🚀"
+        },
+        {
+          "author": "agent",
+          "text": "You're doing great! I'm just pulling up your account details now."
+        },
+        {
+          "author": "client",
+          "text": "Ooh, exciting! Sounds like a plan! 🚀"
+        },
+        {
+          "author": "agent",
+          "text": "You're doing great! I'm just pulling up your account details now."
+        },
+        {
+          "author": "client",
+          "text": "Ooh, exciting! Sounds like a plan! 🚀"
+        },
+        {
+          "author": "agent",
+          "text": "Wait, I was looking at the wrong policy. Since it's within 24 hours of the charge, I can refund it. My mistake."
+        },
+        {
+          "author": "client",
+          "text": "Phew! You had me worried! Thank you so much! ✨"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Oh no, I tried to export my report and everything turned white! 😭 Did I break the whole database? Please tell me I didn't delete my boss's work!"
+        },
+        {
+          "author": "agent",
+          "text": "You probably clicked the button too hard or too many times. You shouldn't do that, it's very bad for the server."
+        },
+        {
+          "author": "client",
+          "text": "I'm so sorry! 😭 I'll never do it again! Is it all gone? Am I fired?"
+        },
+        {
+          "author": "agent",
+          "text": "You're doing great! I'm just pulling up your account details now."
+        },
+        {
+          "author": "client",
+          "text": "Ooh, exciting! Sounds like a plan! 🚀"
+        },
+        {
+          "author": "agent",
+          "text": "Okay, almost done! Thanks for being so positive."
+        },
+        {
+          "author": "client",
+          "text": "Always! Positivity is key! ✨"
+        },
+        {
+          "author": "agent",
+          "text": "You're doing great! I'm just pulling up your account details now."
+        },
+        {
+          "author": "client",
+          "text": "Ooh, exciting! Sounds like a plan! 🚀"
+        },
+        {
+          "author": "agent",
+          "text": "Just a quick moment while I refresh the system."
+        },
+        {
+          "author": "client",
+          "text": "Refreshing... like a cool glass of lemonade! 🍋"
+        },
+        {
+          "author": "agent",
+          "text": "Okay, almost done! Thanks for being so positive."
+        },
+        {
+          "author": "client",
+          "text": "Always! Positivity is key! ✨"
+        },
+        {
+          "author": "agent",
+          "text": "You're doing great! I'm just pulling up your account details now."
+        },
+        {
+          "author": "client",
+          "text": "Ooh, exciting! Sounds like a plan! 🚀"
+        },
+        {
+          "author": "agent",
+          "text": "It's not gone. I've fixed it, but be more careful next time. You're making my job difficult."
+        },
+        {
+          "author": "client",
+          "text": "Thank you so much! I'm so sorry for being a bother!"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "I NEED MY PASSWORD RESET. I ALREADY CLICKED THE LINK THREE TIMES. NOTHING. I AM LOSING MONEY EVERY MINUTE I CAN’T LOG IN."
+        },
+        {
+          "author": "agent",
+          "text": "Please try checking your spam folder."
+        },
+        {
+          "author": "client",
+          "text": "I ALREADY TOLD YOU I DID THAT. DON'T WASTE MY TIME WITH JUNIOR STEPS."
+        },
+        {
+          "author": "agent",
+          "text": "I apologize. I see a delivery failure in our mail server logs for your domain. I am manually triggering a bypass link through a different SMTP relay now. Check your inbox again."
+        },
+        {
+          "author": "client",
+          "text": "It’s there. Fine."
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hiya! 🌟 My cat, Barnaby, just caught a fly! 🐈 Anyway, I need to add 3 users to my 'Basic' plan. Do I pay the full price for 'Pro' today? Hope you're having a snack, I just had a donut! 🍩"
+        },
+        {
+          "author": "agent",
+          "text": "I don't care about your cat or your donut. If you upgrade, it is prorated. You pay the difference for the rest of the month."
+        },
+        {
+          "author": "client",
+          "text": "Oh! 😮 That was a bit mean... I just wanted to be friendly. But thank you for the answer."
+        },
+        {
+          "author": "agent",
+          "text": "Haha, I completely understand! Let me check on that for you."
+        },
+        {
+          "author": "client",
+          "text": "Take your time! No rush at all! 🌻"
+        },
+        {
+          "author": "agent",
+          "text": "Haha, I completely understand! Let me check on that for you."
+        },
+        {
+          "author": "client",
+          "text": "Take your time! No rush at all! 🌻"
+        },
+        {
+          "author": "agent",
+          "text": "Haha, I completely understand! Let me check on that for you."
+        },
+        {
+          "author": "client",
+          "text": "Take your time! No rush at all! 🌻"
+        },
+        {
+          "author": "agent",
+          "text": "Haha, I completely understand! Let me check on that for you."
+        },
+        {
+          "author": "client",
+          "text": "Take your time! No rush at all! 🌻"
+        },
+        {
+          "author": "agent",
+          "text": "You're doing great! I'm just pulling up your account details now."
+        },
+        {
+          "author": "client",
+          "text": "Ooh, exciting! Sounds like a plan! 🚀"
+        },
+        {
+          "author": "agent",
+          "text": "You're doing great! I'm just pulling up your account details now."
+        },
+        {
+          "author": "client",
+          "text": "Ooh, exciting! Sounds like a plan! 🚀"
+        },
+        {
+          "author": "agent",
+          "text": "I'm here to work, not chat. Is there anything else?"
+        },
+        {
+          "author": "client",
+          "text": "No... that's all. Have a better day."
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hello... I want to give you more money for the 'Premium' thing... but the red box says 'Payment Failed'... I don't know why... I called the bank and they said they didn't see any 'ping'..."
+        },
+        {
+          "author": "agent",
+          "text": "I’m so sorry for the confusion. Sometimes the 'red box' shows up if the zip code doesn't match what the bank has on file. Would you like me to walk you through checking that?"
+        },
+        {
+          "author": "client",
+          "text": "Zip code... is that the numbers for my house?"
+        },
+        {
+          "author": "agent",
+          "text": "Almost! It's the 5-digit number for your town. Let's try typing that in together in the box that says 'Postal Code'."
+        },
+        {
+          "author": "agent",
+          "text": "You're doing very well. Let me know when you're ready for the next step."
+        },
+        {
+          "author": "client",
+          "text": "Thank you dear... I am trying my best..."
+        },
+        {
+          "author": "agent",
+          "text": "You're doing very well. Let me know when you're ready for the next step."
+        },
+        {
+          "author": "client",
+          "text": "Thank you dear... I am trying my best..."
+        },
+        {
+          "author": "agent",
+          "text": "Great! Now, slowly move your mouse to the right."
+        },
+        {
+          "author": "client",
+          "text": "Moving to the right... oh my, the little arrow disappeared..."
+        },
+        {
+          "author": "agent",
+          "text": "You're doing very well. Let me know when you're ready for the next step."
+        },
+        {
+          "author": "client",
+          "text": "Thank you dear... I am trying my best..."
+        },
+        {
+          "author": "agent",
+          "text": "Take your time. Do you see a menu at the top?"
+        },
+        {
+          "author": "client",
+          "text": "A menu... like at a restaurant? Oh, words at the top... yes..."
+        },
+        {
+          "author": "client",
+          "text": "Oh! I put my street number there by mistake... Let me fix it... There! It says 'Success'!"
+        },
+        {
+          "author": "agent",
+          "text": "You did it! You're all set on the Premium plan now."
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "I'm trying to upgrade to Pro. Your payment gateway is returning a 402, but there’s no hit on my bank's auth log. I suspect your middleware is dropping the request before it hits the processor."
+        },
+        {
+          "author": "agent",
+          "text": "Let me check the gateway logs... You're right. It looks like a mismatch in the CVV validation logic for your specific card type. I’m forcing a manual override on the validation check for this transaction."
+        },
+        {
+          "author": "client",
+          "text": "About time. I could have written a patch for this faster than this chat took."
+        },
+        {
+          "author": "agent",
+          "text": "Running a quick traceroute from our edge nodes."
+        },
+        {
+          "author": "client",
+          "text": "Don't bother, I already told you it's dropping at the load balancer."
+        },
+        {
+          "author": "agent",
+          "text": "I'm reviewing the stack trace in the backend logs."
+        },
+        {
+          "author": "client",
+          "text": "Make sure to check the database query latency as well."
+        },
+        {
+          "author": "agent",
+          "text": "The override is active. Submit the form again."
+        },
+        {
+          "author": "client",
+          "text": "Transaction successful. Tell your devs to fix their regex. Goodbye."
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "I'm so sorry to bother you! 😭 I want to upgrade to Pro because my team is growing, but I'm mid-cycle. Am I going to be double-charged? I'm so worried I'll mess up the billing and lose all my data!"
+        },
+        {
+          "author": "agent",
+          "text": "Please don't apologize! It's a great question. You won't be double-charged at all. We use a 'prorated' system, so you only pay the small difference for the days left in this month."
+        },
+        {
+          "author": "client",
+          "text": "Oh, thank goodness! So my old data is safe? I won't break the system by clicking 'Upgrade'?"
+        },
+        {
+          "author": "agent",
+          "text": "Just a quick moment while I refresh the system."
+        },
+        {
+          "author": "client",
+          "text": "Refreshing... like a cool glass of lemonade! 🍋"
+        },
+        {
+          "author": "agent",
+          "text": "Okay, almost done! Thanks for being so positive."
+        },
+        {
+          "author": "client",
+          "text": "Always! Positivity is key! ✨"
+        },
+        {
+          "author": "agent",
+          "text": "Just a quick moment while I refresh the system."
+        },
+        {
+          "author": "client",
+          "text": "Refreshing... like a cool glass of lemonade! 🍋"
+        },
+        {
+          "author": "agent",
+          "text": "Okay, almost done! Thanks for being so positive."
+        },
+        {
+          "author": "client",
+          "text": "Always! Positivity is key! ✨"
+        },
+        {
+          "author": "agent",
+          "text": "Okay, almost done! Thanks for being so positive."
+        },
+        {
+          "author": "client",
+          "text": "Always! Positivity is key! ✨"
+        },
+        {
+          "author": "agent",
+          "text": "Your data is 100% safe. Everything will stay exactly where it is, you'll just have more seats for your team. You can click 'Upgrade' with confidence!"
+        },
+        {
+          "author": "client",
+          "text": "Thank you so much! I feel so much better now. You're so kind!"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "THE PDF EXPORT IS BROKEN. IT SPINS FOR A MINUTE THEN DIES. I NEED THIS REPORT FOR A MEETING IN 10 MINUTES. FIX IT."
+        },
+        {
+          "author": "agent",
+          "text": "I'm on it. I see the server hanging on your request. I am manually generating the PDF from our backend and will email it to you in 60 seconds."
+        },
+        {
+          "author": "client",
+          "text": "DON'T EMAIL IT, ATTACH IT HERE. I DON'T HAVE TIME TO REFRESH MY INBOX."
+        },
+        {
+          "author": "agent",
+          "text": "I understand your frustration. I am running a diagnostic."
+        },
+        {
+          "author": "client",
+          "text": "DIAGNOSTIC? JUST FIX THE ERROR."
+        },
+        {
+          "author": "agent",
+          "text": "Understood. The file is attached below. I have also reset your export permissions to prevent this from happening again."
+        },
+        {
+          "author": "client",
+          "text": "Got it. Finally. Don't let it happen again."
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "I'm so incredibly sorry, but I forgot to cancel my trial and my card was charged for a whole year! 😭 I'm so clumsy! Can you ever forgive me and maybe refund the money? I really need it for rent!"
+        },
+        {
+          "author": "agent",
+          "text": "There is nothing to forgive! We are happy to help. I've just reversed the charge for you. It will take a few days to show up in your bank, but it's already processed on our end."
+        },
+        {
+          "author": "client",
+          "text": "Really? I'm not in trouble? My account won't be deleted?"
+        },
+        {
+          "author": "agent",
+          "text": "You're doing great! I'm just pulling up your account details now."
+        },
+        {
+          "author": "client",
+          "text": "Ooh, exciting! Sounds like a plan! 🚀"
+        },
+        {
+          "author": "agent",
+          "text": "Haha, I completely understand! Let me check on that for you."
+        },
+        {
+          "author": "client",
+          "text": "Take your time! No rush at all! 🌻"
+        },
+        {
+          "author": "agent",
+          "text": "Haha, I completely understand! Let me check on that for you."
+        },
+        {
+          "author": "client",
+          "text": "Take your time! No rush at all! 🌻"
+        },
+        {
+          "author": "agent",
+          "text": "Just a quick moment while I refresh the system."
+        },
+        {
+          "author": "client",
+          "text": "Refreshing... like a cool glass of lemonade! 🍋"
+        },
+        {
+          "author": "agent",
+          "text": "Not at all. You still have access to the Basic version for free. No trouble, no worries!"
+        },
+        {
+          "author": "client",
+          "text": "You are a literal angel! Thank you, thank you, thank you!"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hello... I can't get into my computer box... I tried the 'forgot' button but no letter came... My grandson says I should check the 'trash' but I don't see a bin..."
+        },
+        {
+          "author": "agent",
+          "text": "It’s okay, we will find it together! Think of your email like a house. Sometimes the mailman puts letters in a side door called the 'Spam' or 'Junk' folder. Do you see a word like 'Spam' on the left side of your screen?"
+        },
+        {
+          "author": "client",
+          "text": "Oh... let me put on my glasses... yes... 'Spam (3)'..."
+        },
+        {
+          "author": "agent",
+          "text": "Wonderful! Click that, and you should see our link there."
+        },
+        {
+          "author": "client",
+          "text": "I see it! 'Reset Link'! Oh, thank you dear, you've saved my afternoon."
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "Hey hey! 👋 So, I was trying to download my report to show my book club (we're reading a mystery novel! 🕵️‍♀️) and the screen just went white and said '500'! Is the computer having a nap? lol!"
+        },
+        {
+          "author": "agent",
+          "text": "Haha, it sounds like the computer might be a bit overwhelmed! I've checked the 'nap' and it seems your report is just a bit too large for the standard download."
+        },
+        {
+          "author": "client",
+          "text": "Oh! Like my sourdough starter! It grew too big for the jar last week! 🍞"
+        },
+        {
+          "author": "agent",
+          "text": "Exactly like that! I've adjusted your account limit so you can download large files. Go ahead and try again!"
+        },
+        {
+          "author": "client",
+          "text": "It worked! You're the best! Hope your lunch is delicious! Bye!"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "chat": [
+        {
+          "author": "agent",
+          "text": "Hello! Welcome to customer support. How can I help you today?"
+        },
+        {
+          "author": "client",
+          "text": "I’VE BEEN TRYING TO UPGRADE FOR AN HOUR. PAYMENT FAILED. MY BANK SAYS NO ATTEMPT WAS MADE. FIX THIS NOW."
+        },
+        {
+          "author": "agent",
+          "text": "I'm sorry for the inconvenience. Please try clearing your browser cache and cookies, then try again in 24 hours."
+        },
+        {
+          "author": "client",
+          "text": "I JUST TOLD YOU THE BANK SEES NO ATTEMPT. CLEARING COOKIES WON'T CHANGE YOUR BROKEN GATEWAY. DON'T WASTE MY TIME."
+        },
+        {
+          "author": "agent",
+          "text": "I understand your frustration. I am running a diagnostic."
+        },
+        {
+          "author": "client",
+          "text": "DIAGNOSTIC? JUST FIX THE ERROR."
+        },
+        {
+          "author": "agent",
+          "text": "I am looking into the system logs right now, please bear with me."
+        },
+        {
+          "author": "client",
+          "text": "I DON'T WANT TO WAIT. DO YOUR JOB."
+        },
+        {
+          "author": "agent",
+          "text": "I am looking into the system logs right now, please bear with me."
+        },
+        {
+          "author": "client",
+          "text": "I DON'T WANT TO WAIT. DO YOUR JOB."
+        },
+        {
+          "author": "agent",
+          "text": "I understand your frustration. I am running a diagnostic."
+        },
+        {
+          "author": "client",
+          "text": "DIAGNOSTIC? JUST FIX THE ERROR."
+        },
+        {
+          "author": "agent",
+          "text": "I am looking into the system logs right now, please bear with me."
+        },
+        {
+          "author": "client",
+          "text": "I DON'T WANT TO WAIT. DO YOUR JOB."
+        },
+        {
+          "author": "agent",
+          "text": "I am looking into the system logs right now, please bear with me."
+        },
+        {
+          "author": "client",
+          "text": "I DON'T WANT TO WAIT. DO YOUR JOB."
+        },
+        {
+          "author": "agent",
+          "text": "I understand your frustration. I am running a diagnostic."
+        },
+        {
+          "author": "client",
+          "text": "DIAGNOSTIC? JUST FIX THE ERROR."
+        },
+        {
+          "author": "agent",
+          "text": "As per our protocol, we must rule out local browser issues first. Please clear the cache and restart your device."
+        },
+        {
+          "author": "client",
+          "text": "YOU ARE USELESS. I’M NOT WAITING 24 HOURS TO GIVE YOU MONEY. I’M SWITCHING TO A COMPETITOR RIGHT NOW. DISGUSTING SERVICE."
+        }
+      ]
+    }
+  ]
+}
